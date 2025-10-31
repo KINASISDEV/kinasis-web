@@ -14,5 +14,11 @@
     "astro": "^5.15.1",
     "react": "^19.2.0",
     "vue": "^3.5.22"
+  },
+  "devDependencies": {
+    "@astrojs/tailwind": "^6.0.2",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.18"
   }
 }
