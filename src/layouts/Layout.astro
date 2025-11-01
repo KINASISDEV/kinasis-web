@@ -9,6 +9,12 @@ import HeaderLayout from "./HeaderLayout.astro";
 	}
 
 	document.addEventListener('DOMContentLoaded', () => {
+		const logo = document.getElementById("brandLogo");
+		if (logo) {
+			const isDark = document.documentElement.classList.contains("dark");
+			logo.src = isDark ? "/KINASIS_logo_verde.png" : "/KINASIS_logo_red.png";
+		}
+		
 		document.body.classList.add('transition-colors', 'duration-300');
 		const header = document.querySelector('.header');
 		if (header) {

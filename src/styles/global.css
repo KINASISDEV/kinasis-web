@@ -15,6 +15,10 @@ html, body {
 	--glass-border: rgba(215,38,56,0.12);
 }
 
+#brandLogo {
+	transition: none;
+}
+
 .header.glass {
 	background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.02));
 	backdrop-filter: blur(8px) saturate(120%);
@@ -101,7 +105,6 @@ html, body {
 	.nav-links { display: none; }
 }
 
-/* Transiciones específicas solo donde se necesiten */
 .brand-title,
 .nav-links .nav-link,
 .github-btn,

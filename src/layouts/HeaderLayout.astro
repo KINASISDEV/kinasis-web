@@ -6,42 +6,30 @@
   document.addEventListener('DOMContentLoaded', () => {
     const toggle = document.getElementById("themeToggle");
     const circle = document.getElementById("themeCircle");
-  const html = document.documentElement;
-  const logo = /** @type {HTMLImageElement | null} */ (document.getElementById("brandLogo"));
+    const html = document.documentElement;
+    const logo = document.getElementById("brandLogo");
 
     if (!toggle || !circle || !logo) return;
 
-
-    /** @param {boolean} isDark */
-    function setLogoForTheme(isDark) {
-
-      if (!logo) return;
-      logo.setAttribute('src', isDark ? "/KINASIS_logo_verde.png" : "/KINASIS_logo_red.png");
-    }
-
-
-    const storedTheme = localStorage.getItem('theme');
-    const initialIsDark = storedTheme === 'dark' || html.classList.contains('dark');
-
-    if (initialIsDark) {
+    const isDark = html.classList.contains('dark');
+    if (isDark) {
       circle.classList.add("translate-x-5");
     } else {
       circle.classList.remove("translate-x-5");
     }
-    setLogoForTheme(initialIsDark);
 
     toggle.addEventListener("click", () => {
-      const isDark = html.classList.toggle("dark");
+      const newIsDark = html.classList.toggle("dark");
 
-      if (isDark) {
+      if (newIsDark) {
         circle.classList.add("translate-x-5");
         localStorage.theme = "dark";
+        logo.setAttribute('src', "/KINASIS_logo_verde.png");
       } else {
         circle.classList.remove("translate-x-5");
         localStorage.theme = "light";
+        logo.setAttribute('src', "/KINASIS_logo_red.png");
       }
-
-      setLogoForTheme(isDark);
     });
   });
 </script>
