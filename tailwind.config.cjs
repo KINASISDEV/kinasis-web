@@ -1,10 +1,15 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class', 
   content: [
-    './src/**/*.{astro,html,js,jsx,ts,tsx,vue}',
-    './public/**/*.html'
+    './src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'brand-red': '#c2272d', 
+      },
+    },
   },
   plugins: [],
 };

@@ -2,9 +2,46 @@
 
 ---
 
-<header class="header glass fixed w-full top-0 left-0 z-50 border-b py-8 px-7">
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.getElementById("themeToggle");
+    const circle = document.getElementById("themeCircle");
+    const html = document.documentElement;
+
+    if (!toggle || !circle) return;
+
+  
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      html.classList.add("dark");
+      toggle.classList.add("bg-red-600");
+      toggle.classList.remove("bg-gray-200");
+      circle.classList.add("translate-x-5");
+    }
+
+    toggle.addEventListener("click", () => {
+      const isDark = html.classList.toggle("dark");
+
+      if (isDark) {
+        toggle.classList.add("bg-red-600");
+        toggle.classList.remove("bg-gray-200");
+        circle.classList.add("translate-x-5");
+        localStorage.theme = "dark";
+      } else {
+        toggle.classList.add("bg-gray-200");
+        toggle.classList.remove("bg-red-600");
+        circle.classList.remove("translate-x-5");
+        localStorage.theme = "light";
+      }
+    });
+  });
+</script>
+
+<header class="header fixed w-full top-0 left-0 z-50 border-b py-8 px-7 bg-white dark:bg-gray-900 dark:border-gray-700 transition-colors duration-300">
   <div class="flex items-center justify-between">
-    <!-- Logo + Nombre (izquierda) -->
+
     <div class="flex items-center space-x-2">
       <img src="/KINASIS-logo.png" alt="Logo KINASIS" class="w-9 h-9" />
       <span class="brand-title text-brand-red text-lg font-semibold tracking-wide">KINASIS</span>
@@ -29,9 +66,17 @@
           GitHub
         </a>
 
-        <div class="w-10 h-5 bg-gray-200 rounded-full relative">
-          <div class="absolute right-1 top-1 w-3.5 h-3.5 bg-white rounded-full"></div>
-        </div>
+
+        <button
+          id="themeToggle"
+          aria-label="Cambiar tema"
+          class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-300 flex items-center"
+        >
+          <span
+            id="themeCircle"
+            class="absolute left-1 w-3.5 h-3.5 bg-white rounded-full transition-all duration-300 transform"
+          ></span>
+        </button>
       </div>
     </div>
   </div>
