@@ -9,10 +9,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^4.4.0",
-    "@astrojs/vue": "^5.1.1",
+    "@astrojs/react": "^4.4.1",
+    "@astrojs/vue": "^5.1.2",
+    "@vitejs/plugin-vue": "^6.0.1",
     "astro": "^5.15.1",
     "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "vue": "^3.5.22"
   },
   "devDependencies": {
