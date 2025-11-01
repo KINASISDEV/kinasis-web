@@ -10,14 +10,8 @@
 
     if (!toggle || !circle) return;
 
-  
-    if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      html.classList.add("dark");
-      toggle.classList.add("bg-red-600");
-      toggle.classList.remove("bg-gray-200");
+    // Sincronizar el estado visual del toggle con el tema actual
+    if (html.classList.contains("dark")) {
       circle.classList.add("translate-x-5");
     }
 
@@ -25,13 +19,9 @@
       const isDark = html.classList.toggle("dark");
 
       if (isDark) {
-        toggle.classList.add("bg-red-600");
-        toggle.classList.remove("bg-gray-200");
         circle.classList.add("translate-x-5");
         localStorage.theme = "dark";
       } else {
-        toggle.classList.add("bg-gray-200");
-        toggle.classList.remove("bg-red-600");
         circle.classList.remove("translate-x-5");
         localStorage.theme = "light";
       }
@@ -39,42 +29,36 @@
   });
 </script>
 
-<header class="header fixed w-full top-0 left-0 z-50 border-b py-8 px-7 bg-white dark:bg-gray-900 dark:border-gray-700 transition-colors duration-300">
+<header class="header fixed w-full top-0 left-0 z-50 border-b py-8 px-7 bg-white">
   <div class="flex items-center justify-between">
 
     <div class="flex items-center space-x-2">
       <img src="/KINASIS-logo.png" alt="Logo KINASIS" class="w-9 h-9" />
-      <span class="brand-title text-brand-red text-lg font-semibold tracking-wide">KINASIS</span>
+      <span class="brand-title text-lg font-semibold tracking-wide">KINASIS</span>
     </div>
 
     <div class="flex items-center">
       <nav class="hidden md:flex space-x-6 nav-links mr-5">
-        <a href="/sobre-nosotros" class="nav-link">Sobre nosotros</a>
-        <a href="/nuestro-equipo" class="nav-link">Nuestro equipo</a>
-        <a href="/servicios" class="nav-link">Servicios</a>
-        <a href="/proyectos" class="nav-link">Proyectos</a>
-        <a href="/contacto" class="nav-link">Contacto</a>
+        <a href="/HomePage" class="nav-link">Sobre nosotros</a>
+        <a href="/TeamWorkPage" class="nav-link">Nuestro equipo</a>
+        <a href="/WorkPage" class="nav-link">Servicios</a>
+        <a href="/TecnologiesPage" class="nav-link">Tecnologias</a>
+        <a href="/ContactPage" class="nav-link">Contacto</a>
       </nav>
 
       <div class="flex items-center space-x-3">
-        <a
-          href="https://github.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="bg-[#2B2B2B] text-white px-4 py-1.5 rounded hover:bg-black transition-colors"
-        >
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="github-btn px-4 py-1.5 rounded transition-colors">
           GitHub
         </a>
-
 
         <button
           id="themeToggle"
           aria-label="Cambiar tema"
-          class="relative w-10 h-5 bg-gray-200 rounded-full transition-colors duration-300 flex items-center"
+          class="theme-toggle relative w-10 h-5 rounded-full transition-colors duration-300 flex items-center"
         >
           <span
             id="themeCircle"
-            class="absolute left-1 w-3.5 h-3.5 bg-white rounded-full transition-all duration-300 transform"
+            class="theme-toggle-circle absolute left-1 w-3.5 h-3.5 rounded-full transition-all duration-300 transform"
           ></span>
         </button>
       </div>

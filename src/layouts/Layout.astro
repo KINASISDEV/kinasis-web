@@ -1,22 +1,38 @@
 ---
 import "../styles/global.css";
+import HeaderLayout from "./HeaderLayout.astro";
 ---
+
+<script is:inline>
+	if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+		document.documentElement.classList.add("dark");
+	}
+
+	document.addEventListener('DOMContentLoaded', () => {
+		document.body.classList.add('transition-colors', 'duration-300');
+		const header = document.querySelector('.header');
+		if (header) {
+			header.classList.add('transition-colors', 'duration-300');
+		}
+	});
+</script>
+
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/KINASIS-logo.png" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-
+		<title>KINASIS WEB</title>
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;600&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;600&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">	
 	</head>
-	<body class="bg-white text-gray-900 dark:bg-[#121212] dark:text-gray-100 transition-colors duration-300">
+	<body class="bg-white text-[#D72638] dark:bg-[#111827] dark:text-[#45CCAC]">
+		<HeaderLayout />
 		<slot />
 	</body>
 </html>
