@@ -6,14 +6,29 @@
   document.addEventListener('DOMContentLoaded', () => {
     const toggle = document.getElementById("themeToggle");
     const circle = document.getElementById("themeCircle");
-    const html = document.documentElement;
+  const html = document.documentElement;
+  const logo = /** @type {HTMLImageElement | null} */ (document.getElementById("brandLogo"));
 
-    if (!toggle || !circle) return;
+    if (!toggle || !circle || !logo) return;
 
-    // Sincronizar el estado visual del toggle con el tema actual
-    if (html.classList.contains("dark")) {
-      circle.classList.add("translate-x-5");
+
+    /** @param {boolean} isDark */
+    function setLogoForTheme(isDark) {
+
+      if (!logo) return;
+      logo.setAttribute('src', isDark ? "/KINASIS_logo_verde.png" : "/KINASIS_logo_red.png");
     }
+
+
+    const storedTheme = localStorage.getItem('theme');
+    const initialIsDark = storedTheme === 'dark' || html.classList.contains('dark');
+
+    if (initialIsDark) {
+      circle.classList.add("translate-x-5");
+    } else {
+      circle.classList.remove("translate-x-5");
+    }
+    setLogoForTheme(initialIsDark);
 
     toggle.addEventListener("click", () => {
       const isDark = html.classList.toggle("dark");
@@ -25,6 +40,8 @@
         circle.classList.remove("translate-x-5");
         localStorage.theme = "light";
       }
+
+      setLogoForTheme(isDark);
     });
   });
 </script>
@@ -33,7 +50,7 @@
   <div class="flex items-center justify-between">
 
     <div class="flex items-center space-x-2">
-      <img src="/KINASIS-logo.png" alt="Logo KINASIS" class="w-9 h-9" />
+      <img id="brandLogo" src="/KINASIS_logo_red.png" alt="Logo KINASIS" class="w-9 h-9" />
       <span class="brand-title text-lg font-semibold tracking-wide">KINASIS</span>
     </div>
 
