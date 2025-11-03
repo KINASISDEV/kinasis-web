@@ -31,13 +31,49 @@ html, body {
 .brand-title { font-family: 'Roboto Mono', monospace; color: var(--brand-red); }
 
 .nav-links .nav-link {
-	color: var(--brand-red);
-	font-family: 'Jura', sans-serif;
-	font-weight: 600;
-	text-decoration: none;
-	transition: transform .12s ease;
+  position: relative;
+  color: var(--brand-red);
+  font-family: 'Jura', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.12s ease;
 }
-.nav-links .nav-link:hover { transform: translateY(-1px); }
+
+.nav-links .nav-link:hover {
+  transform: translateY(-2px);
+}
+
+.nav-links .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--brand-red);
+  transition: width 0.4s ease; 
+}
+
+.nav-links .nav-link:hover::after {
+  width: 100%;
+}
+
+.dark .nav-links .nav-link::after {
+  background-color: #45CCAC;
+}
+
+.dark .nav-links .nav-link::after {
+  background-color: #45CCAC;
+}
+
+.nav-links .nav-link.active::after {
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
 
 .github-btn { 
 	background: rgba(0,0,0,0.7); 
