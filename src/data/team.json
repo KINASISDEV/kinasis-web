@@ -1,0 +1,45 @@
+[
+    {
+        "nombre":"Monroy Cortines Jacobo Emiliano",
+        "foto":"",
+        "frase":"Desarrollando soluciones.",
+        "roles":["CEO", "CTO", "Product Managment", "Backend Developer", "Frontend Developer", "Software Architect"],
+        "portafolio":"https://dashing-kelpie-bf1e6e.netlify.app/",
+        "linkedin":"https://www.linkedin.com/in/monroy-jacobo?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+        "github":"github.com/killahblitz",
+        "cv":"google.com"
+    },
+
+    {
+        "nombre":"San Pedro Texis Emanuel Tristan",
+        "foto":"",
+        "frase":"",
+        "roles":["CEO", "Especialist Infrastructure"],
+        "portafolio":"",
+        "linkedin":"",
+        "github":"",
+        "cv":"google.com"
+    },
+
+    {
+        "nombre":"González Delgado Arturo Iván",
+        "foto":"",
+        "frase":"Combinando diseño, lógica y rendimiento.",
+        "roles":["Backend Developer", "Frontend Developer"],
+        "portafolio":"",
+        "linkedin":"https://www.linkedin.com/in/arturo-iván-gonzález-delgado-76b739202",
+        "github":"https://github.com/CachorroIvan",
+        "cv":"google.com"
+    },
+
+    {
+        "nombre":"González Ramirez Joshua",
+        "foto":"",
+        "frase":"",
+        "roles":["UI Designer", "Frontend Developer"],
+        "portafolio":"",
+        "linkedin":"",
+        "github":"",
+        "cv":"google.com"
+    }
+]
