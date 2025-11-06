@@ -1,34 +1,52 @@
 ---
 
 ---
-
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener("DOMContentLoaded", () => {
     const toggle = document.getElementById("themeToggle");
     const circle = document.getElementById("themeCircle");
     const html = document.documentElement;
     const logo = document.getElementById("brandLogo");
 
     if (!toggle || !circle || !logo) return;
-
-    const isDark = html.classList.contains('dark');
+    const isDark = html.classList.contains("dark");
     if (isDark) {
       circle.classList.add("translate-x-5");
+      logo.setAttribute("src", "/KINASIS_logo_verde.png");
     } else {
       circle.classList.remove("translate-x-5");
+      logo.setAttribute("src", "/KINASIS_logo_red.png");
     }
-
     toggle.addEventListener("click", () => {
       const newIsDark = html.classList.toggle("dark");
 
       if (newIsDark) {
+
         circle.classList.add("translate-x-5");
         localStorage.theme = "dark";
-        logo.setAttribute('src', "/KINASIS_logo_verde.png");
+        logo.setAttribute("src", "/KINASIS_logo_verde.png");
+
+        const oldStyle = document.querySelector("style[data-theme-logo]");
+        if (oldStyle) oldStyle.remove();
+
+        // Insertar nuevo estilo inline para futuras recargas
+        const style = document.createElement("style");
+        style.dataset.themeLogo = "true";
+        style.textContent = `img#brandLogo{content:url('/KINASIS_logo_verde.png') !important;}`;
+        document.head.appendChild(style);
       } else {
+        // Cambiar a claro
         circle.classList.remove("translate-x-5");
         localStorage.theme = "light";
-        logo.setAttribute('src', "/KINASIS_logo_red.png");
+        logo.setAttribute("src", "/KINASIS_logo_red.png");
+
+        const oldStyle = document.querySelector("style[data-theme-logo]");
+        if (oldStyle) oldStyle.remove();
+
+        const style = document.createElement("style");
+        style.dataset.themeLogo = "true";
+        style.textContent = `img#brandLogo{content:url('/KINASIS_logo_red.png') !important;}`;
+        document.head.appendChild(style);
       }
     });
   });
