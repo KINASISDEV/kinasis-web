@@ -1,5 +1,5 @@
 ---
-
+const currentPath = Astro.url.pathname;
 ---
 
 <script>
@@ -48,11 +48,11 @@
 
     <div class="flex items-center">
       <nav class="hidden md:flex space-x-6 nav-links mr-5">
-        <a href="/HomePage" class="nav-link">Sobre nosotros</a>
-        <a href="/TeamWorkPage" class="nav-link">Nuestro equipo</a>
-        <a href="/WorkPage" class="nav-link">Servicios</a>
-        <a href="/TecnologiesPage" class="nav-link">Tecnologias</a>
-        <a href="/ContactPage" class="nav-link">Contacto</a>
+      <a href="/HomePage" class={`nav-link ${currentPath === '/HomePage' ? 'active' : ''}`}>Sobre nosotros</a>
+      <a href="/TeamWorkPage" class={`nav-link ${currentPath === '/TeamWorkPage' ? 'active' : ''}`}>Nuestro equipo</a>
+      <a href="/WorkPage" class={`nav-link ${currentPath === '/WorkPage' ? 'active' : ''}`}>Servicios</a>
+      <a href="/TecnologiesPage" class={`nav-link ${currentPath === '/TecnologiesPage' ? 'active' : ''}`}>Tecnologias</a>
+      <a href="/ContactPage" class={`nav-link ${currentPath === '/ContactPage' ? 'active' : ''}`}>Contacto</a>
       </nav>
 
       <div class="flex items-center space-x-3">
