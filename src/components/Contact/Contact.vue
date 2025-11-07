@@ -1,8 +1,8 @@
 <template>
   <main class="contact-root">
     <section class="Banner banner-contact" aria-labelledby="contact-title">
-      <h1 id="contact-title">Contáctanos</h1>
-      <h2>Cuéntanos tu idea y hagámosla realidad</h2>
+      <h1 id="contact-title">Contacto</h1>
+      <h2>¿Tienes una idea? Cuentanos tu proyecto y te ayudaremos a hacerlo realidad </h2>
     </section>
 
     <section class="contact-container" role="region" aria-label="Formulario de contacto">
@@ -12,7 +12,7 @@
             <div class="info-icon">📧</div>
             <div>
               <h4>Email</h4>
-              <p class="muted">contacto@empresa.com</p>
+              <p class="muted">contacto@kinasis.com</p>
             </div>
           </div>
 
@@ -33,16 +33,14 @@
           </div>
         </aside>
         <form class="contact-form" @submit.prevent="handleSubmit" novalidate>
-          <h3>Cuéntanos sobre tu proyecto</h3>
-
+          <h3>Cuéntanos tu idea</h3>
           <div class="form-grid">
             <input v-model="form.name" required placeholder="Nombre *" aria-label="Nombre" />
-            <input v-model="form.email" type="email" required placeholder="Correo *" aria-label="Correo" />
+            <input v-model="form.email" type="email" required placeholder="Email *" aria-label="Email" />
             <input v-model="form.phone" placeholder="Teléfono" aria-label="Teléfono" />
             <input v-model="form.company" placeholder="Empresa" aria-label="Empresa" />
           </div>
-
-          <textarea v-model="form.message" rows="6" required placeholder="Describe tu idea, objetivos..." aria-label="Mensaje"></textarea>
+          <textarea v-model="form.message" rows="6" required placeholder="Describe tu idea o proyecto. ¿Que problema quieres resolver? ¿Cuales son tus objetivos? " aria-label="Mensaje"></textarea>
 
           <div class="form-actions">
             <button type="submit" class="send-btn" :disabled="sending" aria-busy="sending">
