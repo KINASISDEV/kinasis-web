@@ -1,7 +1,7 @@
 <template>
   <div class="Banner">
     <h1>En la busqueda de la Innovacion Tecnologica, Entregando Identidad.</h1>
-    <h2>La Calidad es nuestra Prioridad Soluciones que escalan.</h2>
+    <h2>La Calidad es nuestra Prioridad en Soluciones que escalan.</h2>
   </div>
   <div class="about-container">
     <div class="left-align">
