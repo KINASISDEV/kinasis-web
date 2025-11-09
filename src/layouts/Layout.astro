@@ -2,52 +2,45 @@
 import "../styles/global.css";
 import HeaderLayout from "./HeaderLayout.astro";
 ---
-
 <script is:inline>
-	if (localStorage.theme === "dark" || (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
-		document.documentElement.classList.add("dark");
-	}
+  (() => {
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const storedTheme = localStorage.theme;
+    const isDark = storedTheme === "dark" || (!storedTheme && prefersDark);
 
-	document.addEventListener('DOMContentLoaded', () => {
-		const logo = document.getElementById("brandLogo");
-		if (logo) {
-			const isDark = document.documentElement.classList.contains("dark");
-			logo.src = isDark ? "/KINASIS_logo_verde.png" : "/KINASIS_logo_red.png";
-		}
-		
-		document.body.classList.add('transition-colors', 'duration-300');
-		const header = document.querySelector('.header');
-		if (header) {
-			header.classList.add('transition-colors', 'duration-300');
-		}
-	});
+    if (isDark) {
+      document.documentElement.classList.add("dark");
+      document.write(`<style>img#brandLogo{content:url('/KINASIS_logo_verde.png') !important;}</style>`);
+    } else {
+      document.documentElement.classList.remove("dark");
+      document.write(`<style>img#brandLogo{content:url('/KINASIS_logo_red.png') !important;}</style>`);
+    }
+  })();
 </script>
-
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/KINASIS-logo.png" />
-		<meta name="generator" content={Astro.generator} />
-		<title>KINASIS WEB</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/KINASIS-logo.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>KINASIS WEB</title>
 
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;600&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">	
-	</head>
-	<body class="bg-white text-[#D72638] dark:bg-[#111827] dark:text-[#45CCAC]">
-		<HeaderLayout />
-		<slot />
-	</body>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;600&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-white text-[dark] dark:bg-[#111827] dark:text-[snow] transition-colors duration-300">
+    <HeaderLayout />
+    <slot />
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>
