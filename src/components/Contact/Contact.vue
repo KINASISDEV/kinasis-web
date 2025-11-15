@@ -12,7 +12,7 @@
             <div class="info-icon">📧</div>
             <div>
               <h4>Email</h4>
-              <p class="muted">contacto@kinasis.com</p>
+              <p class="muted">kinaisisdev@outlook.com</p>
             </div>
           </div>
 
@@ -20,7 +20,7 @@
             <div class="info-icon">📞</div>
             <div>
               <h4>Teléfono</h4>
-              <p class="muted">+52 1 55 1234 5678</p>
+              <p class="muted">+52 1 55 8795 7504</p>
             </div>
           </div>
 
@@ -28,7 +28,7 @@
             <div class="info-icon">📍</div>
             <div>
               <h4>Ubicación</h4>
-              <p class="muted">Ciudad, País</p>
+              <p class="muted">CDMX, MEXICO</p>
             </div>
           </div>
         </aside>
@@ -43,22 +43,33 @@
           <textarea v-model="form.message" rows="6" required placeholder="Describe tu idea o proyecto. ¿Que problema quieres resolver? ¿Cuales son tus objetivos? " aria-label="Mensaje"></textarea>
 
           <div class="form-actions">
-            <button type="submit" class="send-btn" :disabled="sending" aria-busy="sending">
-              <span v-if="!sending">Enviar Proyecto</span>
-              <span v-else>Enviando…</span>
+            <button type="submit" class="send-btn" :disabled="sending" :class="{ 'sending': sending }" aria-busy="sending">
+              {{ buttonText }}
             </button>
           </div>
 
-          <p class="form-note" v-if="status" role="status">{{ status }}</p>
+          <p class="form-note" v-if="tempStatus" role="status" :class="tempStatusClass">{{ tempStatus }}</p>
         </form>
       </div>
     </section>
+
+    <div v-if="showModal" class="modal-overlay" @click="closeModal">
+      <div class="modal-content" @click.stop>
+        <div class="modal-icon" :class="modalType">
+          <span v-if="modalType === 'success'">✅</span>
+          <span v-else>❌</span>
+        </div>
+        <h4>{{ modalTitle }}</h4>
+        <p>{{ modalMessage }}</p>
+        <button @click="closeModal" class="modal-btn">Cerrar</button>
+      </div>
+    </div>
   </main>
 </template>
 
 <script setup>
-import { ref} from 'vue'
-import { sendEmail } from './Contact' 
+import { ref, computed } from 'vue'
+import { handleContactForm } from './Contact.js' 
 import './Contact.css' 
 
 const form = ref({
@@ -69,26 +80,94 @@ const form = ref({
   message: ''
 })
 
-async function handleSubmit() {
+const sending = ref(false)
+const tempStatus = ref('')
+const tempStatusClass = ref('')
+const showModal = ref(false)
+const modalType = ref('')
+const modalTitle = ref('')
+const modalMessage = ref('')
 
-  if (!form.value.name || !form.value.email || !form.value.message) {
-    status.value = 'Completa los campos obligatorios.';
-    return;
+const buttonText = computed(() => {
+  if (sending.value) {
+    return 'Enviando mensaje...'
   }
+  return 'Enviar Proyecto'
+})
+
+function showSuccessModal() {
+  modalType.value = 'success'
+  modalTitle.value = '¡Éxito!'
+  modalMessage.value = 'Mensaje enviado correctamente. Te responderemos pronto 👍'
+  showModal.value = true
+}
+
+function showErrorModal(message) {
+  modalType.value = 'error'
+  modalTitle.value = 'Error'
+  modalMessage.value = message || 'Error inesperado. Por favor intenta de nuevo.'
+  showModal.value = true
+}
+
+function closeModal() {
+  showModal.value = false
+  setTimeout(() => {
+    modalType.value = ''
+    modalTitle.value = ''
+    modalMessage.value = ''
+  }, 300)
+}
+
+// Función para mostrar estado temporal
+function showTempStatus(message, type = 'info') {
+  tempStatus.value = message
+  tempStatusClass.value = type
+  setTimeout(() => {
+    tempStatus.value = ''
+    tempStatusClass.value = ''
+  }, 3000)
+}
+
+async function handleSubmit() {
+  console.log('🎯 Formulario enviado desde Vue component')
+  
+  // Mostrar estado de carga
   sending.value = true
-  status.value = ''
+  showTempStatus('Enviando mensaje...', 'sending')
+  
   try {
-    await sendEmail({ ...form.value })
-    status.value = 'Mensaje enviado correctamente. Te responderemos pronto 👍'
-    form.value = { name: '', email: '', phone: '', company: '', message: '' }
-  } catch (err) {
-    console.error('sendEmail error', err)
-    status.value = 'Error al enviar. Intenta de nuevo más tarde.'
+    // Llamar a la función que maneja toda la lógica
+    const response = await handleContactForm(form.value)
+    
+    // Quitar estado temporal
+    tempStatus.value = ''
+    
+    if (response.success) {
+      // Éxito: mostrar modal y limpiar formulario
+      showSuccessModal()
+      if (response.clearForm) {
+        form.value = { 
+          name: '', 
+          email: '', 
+          phone: '', 
+          company: '', 
+          message: '' 
+        }
+      }
+    } else {
+      // Error: mostrar modal de error
+      showErrorModal(response.message)
+    }
+    
+  } catch (error) {
+    // Error inesperado
+    console.error('💥 Error inesperado en handleSubmit:', error)
+    showErrorModal('Error inesperado. Por favor intenta de nuevo.')
   } finally {
+    // Quitar estado de carga
     sending.value = false
   }
 }
-
 </script>
 
 <style src="./Contact.css"></style>
