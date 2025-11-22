@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Desarrollo Web",
+    "description": "Aplicaciones web modernas y escalables",
+    "image": "/services/web.png"
+  },
+  {
+    "id": 2,
+    "title": "Desarrollo Móvil",
+    "description": "Apps nativas e híbridas iOS/Android",
+    "image": "/services/mobile.png"
+  },
+  {
+    "id": 3,
+    "title": "Cloud Solutions",
+    "description": "Infraestructura en la nube AWS/Azure",
+    "image": "/services/cloud.png"
+  },
+  {
+    "id": 4,
+    "title": "Consultoría IT",
+    "description": "Asesoramiento tecnológico experto",
+    "image": "/services/consulting.png"
+  }
+]

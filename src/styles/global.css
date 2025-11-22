@@ -13,6 +13,7 @@ html, body {
 	--brand-red: #D72638;
 	--glass-bg: rgba(255,255,255,0.06);
 	--glass-border: rgba(215,38,56,0.12);
+	--page-bg: #ffffff;
 }
 
 #brandLogo {
@@ -87,6 +88,9 @@ html, body {
 	background-color: #111827;
 	color: #45CCAC;
 	transition: background-color 0.3s ease, color 0.3s ease;
+}
+.dark {
+	--page-bg: #111827;
 }
 
 .dark .header {

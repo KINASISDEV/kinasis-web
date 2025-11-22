@@ -10,10 +10,10 @@
             Desde gestión de inventarios, ventas, compras, hasta recursos humanos y contabilidad.
           </p>
           <ul>
-            <li>✓ Automatización de procesos</li>
-            <li>✓ Reportes en tiempo real</li>
-            <li>✓ Integración con sistemas existentes</li>
-            <li>✓ Soporte 24/7</li>
+            <li> Automatización de procesos</li>
+            <li> Reportes en tiempo real</li>
+            <li> Integración con sistemas existentes</li>
+            <li> Soporte 24/7</li>
           </ul>
         </div>
       </div>

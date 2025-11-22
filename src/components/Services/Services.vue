@@ -7,7 +7,9 @@
         :key="service.id"
         class="service-card-horizontal"
       >
-        <div class="service-icon">{{ service.icon }}</div>
+        <div class="service-icon">
+          <img :src="service.image" :alt="service.title" />
+        </div>
         <div class="service-content">
           <h3>{{ service.title }}</h3>
           <p>{{ service.description }}</p>
@@ -19,37 +21,13 @@
 
 <script>
 import './Services.css'
+import servicesData from './Services.json'
 
 export default {
   name: 'Services',
   data() {
     return {
-      services: [
-        {
-          id: 1,
-          title: 'Desarrollo Web',
-          description: 'Aplicaciones web modernas y escalables',
-          icon: '🌐'
-        },
-        {
-          id: 2,
-          title: 'Desarrollo Móvil',
-          description: 'Apps nativas e híbridas iOS/Android',
-          icon: '📱'
-        },
-        {
-          id: 3,
-          title: 'Cloud Solutions',
-          description: 'Infraestructura en la nube AWS/Azure',
-          icon: '☁️'
-        },
-        {
-          id: 4,
-          title: 'Consultoría IT',
-          description: 'Asesoramiento tecnológico experto',
-          icon: '💡'
-        }
-      ]
+      services: servicesData
     }
   }
 }

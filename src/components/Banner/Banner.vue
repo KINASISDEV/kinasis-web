@@ -79,12 +79,11 @@ export default {
   data() {
     return {
       sections: [
-        { name: 'about', component: AboutUs, visible: false },
-        { name: 'foundators', component: Foundators, visible: false },
-        { name: 'team', component: Team, visible: false },
-        { name: 'contact', component: Contact, visible: false }
-      ],
-      observer: null
+        { name: 'about', component: AboutUs, visible: true },
+        { name: 'foundators', component: Foundators, visible: true },
+        { name: 'team', component: Team, visible: true },
+        { name: 'contact', component: Contact, visible: true }
+      ]
     }
   },
   methods: {
@@ -93,22 +92,7 @@ export default {
       if (first) first.scrollIntoView({ behavior: 'smooth' })
     }
   },
-  mounted() {
-    this.observer = new IntersectionObserver(entries => {
-      const nodes = this.$refs.sections || []
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const idx = nodes.indexOf(entry.target)
-            ;(idx !== -1) && (this.sections[idx].visible = true)
-        }
-      })
-    }, { threshold: 0.15 })
-    this.$nextTick(() => {
-      (this.$refs.sections || []).forEach(n => n && this.observer.observe(n))
-    })
-  },
-  beforeUnmount() {
-    this.observer && this.observer.disconnect()
-  }
+  mounted() {},
+  beforeUnmount() {}
 }
 </script>
