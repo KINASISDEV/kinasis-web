@@ -151,14 +151,10 @@
 
 
 .section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 600ms ease, transform 600ms ease;
-  padding: 2rem;
   box-sizing: border-box;
 }
 

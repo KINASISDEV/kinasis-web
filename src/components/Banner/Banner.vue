@@ -1,7 +1,6 @@
 <template>
   <div>
     <header class="banner">
-      <!-- Fondo video -->
       <div class="banner-video">
         <iframe
           src="https://www.youtube.com/embed/sH4uierF0Lc?autoplay=1&mute=1&controls=0&rel=0&loop=1&playlist=sH4uierF0Lc&modestbranding=1&start=60"
@@ -51,48 +50,19 @@
         </svg>
       </button>
     </header>
-
-    <main class="sections-wrapper">
-      <section
-        class="section"
-        v-for="(s,i) in sections"
-        :key="s.name"
-        ref="sections"
-        :class="{ visible: s.visible }"
-      >
-        <component :is="s.component" />
-      </section>
-    </main>
   </div>
 </template>
 
 <script>
 import './Banner.css'
-import AboutUs from '../AboutUs/AboutUs.vue'
-import Foundators from '../Foundators/Foundators.vue'
-import Team from '../Team/Team.jsx'
-import Contact from '../Contact/Contact.vue'
 
 export default {
   name: 'Banner',
-  components: { AboutUs, Foundators, Team, Contact },
-  data() {
-    return {
-      sections: [
-        { name: 'about', component: AboutUs, visible: true },
-        { name: 'foundators', component: Foundators, visible: true },
-        { name: 'team', component: Team, visible: true },
-        { name: 'contact', component: Contact, visible: true }
-      ]
-    }
-  },
   methods: {
     scrollToContent() {
-      const first = this.$refs.sections?.[0]
-      if (first) first.scrollIntoView({ behavior: 'smooth' })
+      const main = document.querySelector('.main-content')
+      if (main) main.scrollIntoView({ behavior: 'smooth' })
     }
-  },
-  mounted() {},
-  beforeUnmount() {}
+  }
 }
 </script>

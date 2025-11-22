@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <header class="readywork-banner">
+  <div class="readywork-wrapper">
+    <div class="readywork-banner">
       <div class="readywork-banner-inner">
         <h1 class="readywork-title">SERVICIOS QUE OFRECEMOS</h1>
         <p class="readywork-subtitle">Innovación, escalabilidad y calidad en cada entrega</p>
@@ -9,20 +9,16 @@
           clave de negocio mediante productos, servicios y desarrollos a medida.
         </p>
       </div>
-    </header>
-    <main class="readywork-content">
-      <section class="section">
+    </div>
+    <div class="readywork-content">
+      <div class="readywork-section">
         <PriorityProduct />
-      </section>
+      </div>
       
-      <section class="section">
+      <div class="readywork-section">
         <Products />
-      </section>
-      
-      <section class="section">
-        <Services />
-      </section>
-    </main>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -30,10 +26,9 @@
 import './ReadyWork.css'
 import PriorityProduct from '../Services/PriorityProduct/PriorityProduct.vue'
 import Products from '../Services/Products/Products.vue'
-import Services from '../Services/Services.vue'
 
 export default {
   name: 'ReadyWork',
-  components: { PriorityProduct, Products, Services }
+  components: { PriorityProduct, Products }
 }
 </script>

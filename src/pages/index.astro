@@ -1,8 +1,30 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Banner from '../components/Banner/Banner.vue'
+import AboutUs from '../components/AboutUs/AboutUs.vue'
+import OurVision from '../components/OurVision/OurVision.vue'
+import Goals from '../components/Goals/Goals.vue'
+import Foundators from '../components/Foundators/Foundators.vue'
+import Team from '../components/Team/Team.jsx'
+import Services from '../components/Services/Services.vue'
+import ReadyWork from '../components/ReadyWork/ReadyWork.vue'
+import ProcessDev from '../components/ProcessDev/ProcessDev.vue'
+import DevTools from '../components/DevTools/DevTools.vue'
+import Contact from '../components/Contact/Contact.vue'
 ---
 
 <Layout>
   <Banner client:load />
+  <main class="main-content pt-28 max-w-7xl mx-auto px-6">
+    <AboutUs client:load />
+    <OurVision client:load />
+    <Goals client:load />
+    <Foundators client:load />
+    <Team client:load />
+    <ReadyWork client:load />
+    <Services client:load />
+    <ProcessDev client:load />
+    <DevTools client:load />
+    <Contact client:load />
+  </main>
 </Layout>
