@@ -1,0 +1,125 @@
+---
+---
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>KINASIS</h3>
+      <p>Transformando ideas en soluciones tecnológicas innovadoras</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Contacto</h4>
+      <p>Email: kinaisisdev@outlook.com</p>
+      <p>Tel: +52 1 55 8795 7504</p>
+      <p>CDMX, México</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Soporte</h4>
+      <p><a href="/contact">Contacto</a></p>
+      <p><a href="/work">Servicios</a></p>
+      <p><a href="/technologies">Tecnologías</a></p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; {new Date().getFullYear()} KINASIS. Todos los derechos reservados.</p>
+    <p>Desarrollado con ❤️ por KINASIS Team</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: linear-gradient(135deg, #5a0d14 0%, #8B1420 50%, #5a0d14 100%);
+    color: white;
+    padding: 3rem 2rem 1.5rem;
+    margin-top: auto;
+    width: 100%;
+  }
+
+  :global(.dark) .site-footer {
+    background: linear-gradient(135deg, #0f3832 0%, #1e5a4f 50%, #0f3832 100%);
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-section h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    font-family: 'Jura', sans-serif;
+    color: white;
+  }
+
+  .footer-section h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    font-family: 'Jura', sans-serif;
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  .footer-section p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-section a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-section a:hover {
+    color: white;
+    text-decoration: underline;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 1.5rem;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-bottom p {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0.25rem 0;
+  }
+
+  @media (max-width: 768px) {
+    .site-footer {
+      padding: 2rem 1.5rem 1rem;
+    }
+
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    .footer-section h3 {
+      font-size: 1.3rem;
+    }
+
+    .footer-section h4 {
+      font-size: 1rem;
+    }
+
+    .footer-bottom {
+      padding-top: 1rem;
+    }
+  }
+</style>

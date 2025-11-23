@@ -1,3 +1,10 @@
+.team-container {
+  padding: 3.375rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 .title-aboutUs {
   font-size: 2rem;
   font-weight: bold;
