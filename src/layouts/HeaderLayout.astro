@@ -1,0 +1,93 @@
+---
+const currentPath = Astro.url.pathname;
+---
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("themeToggle");
+    const circle = document.getElementById("themeCircle");
+    const html = document.documentElement;
+    const logo = document.getElementById("brandLogo");
+
+    if (!toggle || !circle || !logo) return;
+    const isDark = html.classList.contains("dark");
+    if (isDark) {
+      circle.classList.add("translate-x-5");
+      logo.setAttribute("src", "/KINASIS_logo_verde.png");
+    } else {
+      circle.classList.remove("translate-x-5");
+      logo.setAttribute("src", "/KINASIS_logo_red.png");
+    }
+    toggle.addEventListener("click", () => {
+      const newIsDark = html.classList.toggle("dark");
+
+      if (newIsDark) {
+
+        circle.classList.add("translate-x-5");
+        localStorage.theme = "dark";
+        logo.setAttribute("src", "/KINASIS_logo_verde.png");
+
+        const oldStyle = document.querySelector("style[data-theme-logo]");
+        if (oldStyle) oldStyle.remove();
+
+        // Insertar nuevo estilo inline para futuras recargas
+        const style = document.createElement("style");
+        style.dataset.themeLogo = "true";
+        style.textContent = `img#brandLogo{content:url('/KINASIS_logo_verde.png') !important;}`;
+        document.head.appendChild(style);
+      } else {
+        circle.classList.remove("translate-x-5");
+        localStorage.theme = "light";
+        logo.setAttribute("src", "/KINASIS_logo_red.png");
+
+        const oldStyle = document.querySelector("style[data-theme-logo]");
+        if (oldStyle) oldStyle.remove();
+
+        const style = document.createElement("style");
+        style.dataset.themeLogo = "true";
+        style.textContent = `img#brandLogo{content:url('/KINASIS_logo_red.png') !important;}`;
+        document.head.appendChild(style);
+      }
+    });
+  });
+</script>
+
+<header class="header fixed w-full top-0 left-0 z-50 border-b py-8 px-7">
+  <div class="flex items-center justify-between">
+
+    <div class="flex items-center space-x-2">
+      <a href="/">
+        <div class="flex items-center space-x-2">
+          <img id="brandLogo" src="/KINASIS_logo_red.png" alt="Logo KINASIS" class="w-9 h-9" />
+          <span class="brand-title text-lg font-semibold tracking-wide">KINASIS</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="flex items-center">
+      <nav class="hidden md:flex space-x-6 nav-links mr-5">
+      <a href="/HomePage" class={`nav-link ${currentPath === '/HomePage' ? 'active' : ''}`}>Sobre nosotros</a>
+      <a href="/TeamWorkPage" class={`nav-link ${currentPath === '/TeamWorkPage' ? 'active' : ''}`}>Nuestro equipo</a>
+      <a href="/WorkPage" class={`nav-link ${currentPath === '/WorkPage' ? 'active' : ''}`}>Servicios</a>
+      <a href="/TecnologiesPage" class={`nav-link ${currentPath === '/TecnologiesPage' ? 'active' : ''}`}>Tecnologias</a>
+      <a href="/ContactPage" class={`nav-link ${currentPath === '/ContactPage' ? 'active' : ''}`}>Contacto</a>
+      </nav>
+
+      <div class="flex items-center space-x-3">
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="github-btn px-4 py-1.5 rounded transition-colors">
+          GitHub
+        </a>
+
+        <button
+          id="themeToggle"
+          aria-label="Cambiar tema"
+          class="theme-toggle relative w-10 h-5 rounded-full transition-colors duration-300 flex items-center"
+        >
+          <span
+            id="themeCircle"
+            class="theme-toggle-circle absolute left-1 w-3.5 h-3.5 rounded-full transition-all duration-300 transform"
+          ></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

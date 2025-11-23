@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Sistema POS",
+    "description": "Sistema punto de venta para retail y restaurantes",
+    "technology": "React + Node.js",
+    "image": "/products/pos.jpg"
+  },
+  {
+    "id": 2,
+    "name": "CRM Empresarial",
+    "description": "Gestión de relaciones con clientes",
+    "technology": "Vue.js + Python",
+    "image": "/products/crm.jpg"
+  },
+  {
+    "id": 3,
+    "name": "E-commerce Platform",
+    "description": "Plataforma completa de comercio electrónico",
+    "technology": "Next.js + Stripe",
+    "image": "/products/ecommerce.jpg"
+  }
+]

@@ -1,0 +1,161 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html, body {
+	padding: 0;
+	margin: 0;
+	font-family: 'Jura', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+:root {
+	--brand-red: #D72638;
+	--glass-bg: rgba(255,255,255,0.06);
+	--glass-border: rgba(215,38,56,0.12);
+	--page-bg: #ffffff;
+}
+
+#brandLogo {
+	transition: none;
+}
+
+.header.glass {
+	background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.02));
+	backdrop-filter: blur(8px) saturate(120%);
+	-webkit-backdrop-filter: blur(8px) saturate(120%);
+	border-bottom: 1px solid var(--glass-border);
+	background-color: rgba(18,18,18,0.25);
+}
+
+.text-brand-red { color: var(--brand-red); }
+.brand-title { font-family: 'Roboto Mono', monospace; color: var(--brand-red); }
+
+.nav-links .nav-link {
+  position: relative;
+  color: var(--brand-red);
+  font-family: 'Jura', sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.12s ease;
+}
+
+.nav-links .nav-link:hover {
+  transform: translateY(-2px);
+}
+
+.nav-links .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--brand-red);
+  transition: width 0.4s ease; 
+}
+
+.nav-links .nav-link:hover::after {
+  width: 100%;
+}
+
+.dark .nav-links .nav-link::after {
+  background-color: #45CCAC;
+}
+
+.dark .nav-links .nav-link::after {
+  background-color: #45CCAC;
+}
+
+.nav-links .nav-link.active::after {
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+
+.github-btn { 
+	background: rgba(0,0,0,0.7); 
+	color: #fff; 
+	text-decoration: none;
+	display: inline-block;
+}
+.github-btn:hover { background: #000; }
+
+.dark {
+	background-color: #111827;
+	color: #45CCAC;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+.dark {
+	--page-bg: #111827;
+}
+
+.dark .header {
+	background-color: rgba(17, 24, 39, 0.7);
+	backdrop-filter: blur(12px) saturate(150%);
+	-webkit-backdrop-filter: blur(12px) saturate(150%);
+	border-bottom-color: rgba(55, 65, 81, 0.3);
+	transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark .brand-title {
+	color: #45CCAC;
+	transition: color 0.3s ease;
+}
+
+.dark .nav-links .nav-link {
+	color: #45CCAC;
+	transition: color 0.3s ease;
+}
+
+.dark .nav-links .nav-link:hover {
+	color: #34D399;
+	transform: translateY(-1px);
+}
+
+.dark .github-btn {
+	background-color: #374151;
+}
+
+.dark .github-btn:hover {
+	background-color: #4B5563;
+}
+
+.theme-toggle {
+	background-color: #D72638;
+	transition: background-color 0.3s ease;
+}
+
+.theme-toggle-circle {
+	background-color: white;
+	transition: all 0.3s ease;
+}
+
+.dark .theme-toggle {
+	background-color: #45CCAC;
+}
+
+.dark .theme-toggle-circle {
+	background-color: #6B7280;
+}
+
+@media (max-width: 768px) {
+	.nav-links { display: none; }
+}
+
+.header {
+	background-color: rgba(255, 255, 255, 0.7);
+	backdrop-filter: blur(12px) saturate(150%);
+	-webkit-backdrop-filter: blur(12px) saturate(150%);
+	border-bottom-color: rgba(215, 38, 56, 0.15);
+}
+
+.brand-title,
+.nav-links .nav-link,
+.github-btn,
+.header {
+	transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
