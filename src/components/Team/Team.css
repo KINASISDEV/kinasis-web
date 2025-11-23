@@ -1,3 +1,35 @@
+.team-main-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #D72638;
+  font-family: 'Jura', sans-serif;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.dark .team-main-title {
+  color: #45CCAC;
+}
+
+.team-main-title::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 5px;
+  background: linear-gradient(90deg, transparent, #D72638, transparent);
+  border-radius: 3px;
+}
+
+.dark .team-main-title::after {
+  background: linear-gradient(90deg, transparent, #45CCAC, transparent);
+}
+
 .title-aboutUs {
   font-size: 2rem;
   font-weight: bold;
@@ -16,6 +48,10 @@
 
 .dark .parrafo {
   color: #ffffff;
+}
+
+.team-container {
+  padding-bottom: 4rem;
 }
 
 .about-container {

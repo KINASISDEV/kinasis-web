@@ -6,6 +6,7 @@ import "./Team.css"
 export default function TeamSection() {
   return (
     <section className="team-container">
+      <h2 className="team-main-title">Nuestro equipo</h2>
       <div className="container-image">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {team.map((miembro, index) => (

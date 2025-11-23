@@ -1,28 +1,201 @@
-.team-container {
+/* Foundators Section */
+.foundators-section {
   padding: 3.375rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
 }
 
-.title-aboutUs {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: var(--brand-red);
+.foundators-main-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #D72638;
   font-family: 'Jura', sans-serif;
+  letter-spacing: -1px;
+  position: relative;
+  text-transform: uppercase;
 }
 
-.dark .title-aboutUs {
+.dark .foundators-main-title {
   color: #45CCAC;
 }
 
-.parrafo {
-    color: #000000;
+.foundators-main-title::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 5px;
+  background: linear-gradient(90deg, transparent, #D72638, transparent);
+  border-radius: 3px;
 }
 
-.dark .parrafo {
-    color: #ffffff;
+.dark .foundators-main-title::after {
+  background: linear-gradient(90deg, transparent, #45CCAC, transparent);
+}
+
+/* Text Container */
+.foundators-text-container {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  padding: 0 1rem;
+}
+
+.foundators-paragraph {
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.dark .foundators-paragraph {
+  color: #e0e0e0;
+}
+
+.foundators-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.foundators-paragraph strong {
+  color: #D72638;
+  font-weight: 700;
+}
+
+.dark .foundators-paragraph strong {
+  color: #45CCAC;
+}
+
+.foundators-paragraph .brand-name {
+  font-weight: 700;
+  color: #D72638;
+  font-family: 'Jura', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+.dark .foundators-paragraph .brand-name {
+  color: #45CCAC;
+}
+
+.foundators-image-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  padding: 4px;
+  border-radius: 32px;
+  background: linear-gradient(90deg, #D72638, #ff6b7a, #ff4757, #D72638, #a01d28, #D72638);
+  background-size: 400% 400%;
+  animation: gradientRotate 6s linear infinite;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .foundators-image-wrapper {
+  background: linear-gradient(90deg, #45CCAC, #5ee7c5, #6ff5d2, #45CCAC, #2d9b7f, #45CCAC);
+  background-size: 400% 400%;
+}
+
+@keyframes gradientRotate {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 400% 50%; }
+}
+
+.foundators-image-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle at 50% 50%, rgba(215, 38, 56, 0.2), transparent 70%);
+  z-index: -1;
+  animation: pulse 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.dark .foundators-image-wrapper::before {
+  background: radial-gradient(circle at 50% 50%, rgba(69, 204, 172, 0.2), transparent 70%);
+}
+
+@keyframes pulse {
+  0%, 100% { 
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% { 
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.foundators-image-wrapper:hover {
+  transform: translateY(-12px) perspective(1000px) rotateX(2deg);
+  animation-duration: 4s;
+}
+
+.foundators-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 28px;
+  transition: all 0.5s ease;
+  filter: brightness(0.95) contrast(1.05);
+}
+
+.dark .foundators-image {
+  filter: brightness(0.9) contrast(1.1);
+}
+
+.foundators-image-wrapper:hover .foundators-image {
+  transform: scale(1.03);
+  filter: brightness(1) contrast(1.1) saturate(1.1);
+}
+
+.dark .foundators-image-wrapper:hover .foundators-image {
+  filter: brightness(0.95) contrast(1.15) saturate(1.1);
+}
+
+@media (max-width: 768px) {
+  .foundators-section {
+    padding: 2.5rem 1.5rem;
+  }
+  
+  .foundators-main-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .foundators-text-container {
+    margin-bottom: 2rem;
+  }
+  
+  .foundators-paragraph {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+  
+  .foundators-image-wrapper {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .foundators-section {
+    padding: 2rem 1rem;
+  }
+  
+  .foundators-main-title {
+    font-size: 2rem;
+  }
+  
+  .foundators-paragraph {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+  
+  .foundators-image-wrapper {
+    border-radius: 16px;
+  }
 }
 
 .about-container {
