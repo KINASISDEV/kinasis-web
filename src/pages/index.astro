@@ -16,15 +16,41 @@ import Contact from '../components/Contact/Contact.vue'
 <Layout>
   <Banner client:load />
   <main class="main-content pt-28 max-w-7xl mx-auto px-6">
-    <AboutUs client:load />
-    <OurVision client:load />
-    <Goals client:load />
-    <Foundators client:load />
-    <Team client:load />
-    <ReadyWork client:load />
-    <Services client:load />
-    <ProcessDev client:load />
-    <DevTools client:load />
-    <Contact client:load />
+    <div style="padding-top: 0;">
+      <AboutUs client:load />
+    </div>
+    <div style="padding-top: 0;">
+      <OurVision client:load />
+    </div>
+    <div style="padding-top: 0;">
+      <Goals client:load />
+    </div>
+    <div style="padding-top: 0;">
+      <Foundators client:load />
+    </div>
+    <div style="padding-top: 0;">
+      <Team client:load />
+    </div>
+    <div style="padding-top: 0;">
+      <ReadyWork client:load />
+    </div>
+    <div style="padding-top: 0;">
+      <Services client:load />
+    </div>
+    <div style="padding-top: 0;">
+      <ProcessDev client:load />
+    </div>
+    <div style="padding-top: 0;">
+      <DevTools client:load />
+    </div>
+    <div style="padding-top: 0;">
+      <Contact client:load />
+    </div>
   </main>
 </Layout>
+
+<style>
+  .main-content > div {
+    margin-top: -10px;
+  }
+</style>
