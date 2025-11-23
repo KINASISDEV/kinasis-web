@@ -30,22 +30,22 @@ export default function TeamSection() {
               <div className="flex grid-cols-4 gap-4 justify-center mt-4 icon-container">
                 <a href={miembro.portafolio} target="_blank" rel="noopener noreferrer">
                   <div className="icon-wrapper">
-                    <img src="./portafolio.png" alt="portafolio" />
+                    <img src="/portafolio.png" alt="portafolio" />
                   </div>
                 </a>
                 <a href={miembro.linkedin} target="_blank" rel="noopener noreferrer">
                   <div className="icon-wrapper">
-                    <img src="./linkedin.png" alt="linkedin" />
+                    <img src="/linkedin.png" alt="linkedin" />
                   </div>
                 </a>
                 <a href={miembro.github} target="_blank" rel="noopener noreferrer">
                   <div className="icon-wrapper">
-                    <img src="./github.png" alt="github" />
+                    <img src="/github.png" alt="github" />
                   </div>
                 </a>
                 <a href={miembro.cv} target="_blank" rel="noopener noreferrer">
                   <div className="icon-wrapper">
-                    <img src="./cv.png" alt="cv" />
+                    <img src="/cv.png" alt="cv" />
                   </div>
                 </a>
               </div>
