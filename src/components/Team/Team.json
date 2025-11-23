@@ -1,13 +1,13 @@
 [
     {
         "nombre":"Monroy Cortines Jacobo Emiliano",
-        "foto":"",
+        "foto":"/TeamMedia/JacoboImage.png",
         "frase":"Desarrollando soluciones.",
         "roles":["CEO", "Product Manager", "FullStack Developer", "Software Architect"],
         "portafolio":"https://dashing-kelpie-bf1e6e.netlify.app/",
         "linkedin":"https://www.linkedin.com/in/monroy-jacobo?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
         "github":"https://github.com/killahblitz",
-        "cv":"google.com"
+        "cv":"https://drive.google.com/drive/folders/1SiFYDXxxTbraxAdbDjnrdtFgBab1GqQc?usp=sharing"
     },
     {
         "nombre":"San Pedro Texis Emanuel Tristan",
@@ -21,17 +21,17 @@
     },
     {
         "nombre":"González Delgado Arturo Iván",
-        "foto":"",
+        "foto":"/TeamMedia/IvanImage.png",
         "frase":"Diseños que inspiran soluciones.",
         "roles":["CTO","FullStack Developer", "Frontend Especialist"],
-        "portafolio":"",
+        "portafolio":"https://effortless-cucurucho-4fb955.netlify.app/",
         "linkedin":"https://www.linkedin.com/in/arturo-iván-gonzález-delgado-76b739202",
         "github":"https://github.com/CachorroIvan",
-        "cv":"google.com"
+        "cv":"https://drive.google.com/drive/folders/1b4YF_uXBc5SOUrkSak8boCLfrnxzZpQd"
     },
     {
         "nombre":"González Ramirez Joshua",
-        "foto":"",
+        "foto":"/TeamMedia/JoshuaImage.png",
         "frase":"Creando experiencias digitales.",
         "roles":["CTO","FullStack Developer", "UI/UX Designer"],
         "portafolio":"",
