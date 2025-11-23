@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import HeaderLayout from "./HeaderLayout.astro";
+import FooterLayout from "./FooterLayout.astro";
 ---
 <script is:inline>
   (() => {
@@ -34,6 +35,7 @@ import HeaderLayout from "./HeaderLayout.astro";
   <body class="bg-white text-[dark] dark:bg-[#111827] dark:text-[snow] transition-colors duration-300">
     <HeaderLayout />
     <slot />
+    <FooterLayout />
   </body>
 </html>
 
