@@ -1,23 +1,44 @@
 [
   {
     "id": 1,
-    "name": "Sistema POS",
-    "description": "Sistema punto de venta para retail y restaurantes",
-    "technology": "React + Node.js",
+    "name": "Sistemas de Inventarios",
+    "description": "Implementación de plataformas personalizadas para controlar existencias, movimientos y reportes clave.",
+    "technology": "Base de Datos + Aplicacion",
     "image": "/products/pos.jpg"
   },
   {
     "id": 2,
-    "name": "CRM Empresarial",
-    "description": "Gestión de relaciones con clientes",
-    "technology": "Vue.js + Python",
+    "name": "Portafolios Profesionales",
+    "description": "Desarrollo de portafolios digitales modernos, visuales y completamente adaptados a la identidad profesional de cada usuario.",
+    "technology": "Presentacion Web",
     "image": "/products/crm.jpg"
   },
   {
     "id": 3,
-    "name": "E-commerce Platform",
-    "description": "Plataforma completa de comercio electrónico",
-    "technology": "Next.js + Stripe",
+    "name": "Páginas Web a Medida",
+    "description": "Sitios responsivos, seguros y con diseño profesional para empresas, autónomos y proyectos personales.",
+    "technology": "Presentacion Web + Logica de Negocio +Base de Datos",
+    "image": "/products/ecommerce.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Análisis de Datos",
+    "description": "Procesamiento, visualización y análisis estratégico de datos para apoyar la toma de decisiones.",
+    "technology": "Base de Datos + Procesamiento",
+    "image": "/products/ecommerce.jpg"
+  },
+    {
+    "id": 5,
+    "name": "Aplicaciones de Escritorio",
+    "description": "Software personalizado para tareas administrativas, operativas o de gestión especializada.",
+    "technology": "Aplicativo de Escritorio + Modelo de Negocio",
+    "image": "/products/ecommerce.jpg"
+  },
+    {
+    "id": 6,
+    "name": "Tiendas E-commerce",
+    "description": "Desarrollo de plataformas de comercio electrónico con catálogo, carrito de compra, pasarelas de pago e integración avanzada.",
+    "technology": "Pagina Web + Base de Datos + Modelo de Negocio + Aplicacion de Soporte",
     "image": "/products/ecommerce.jpg"
   }
 ]

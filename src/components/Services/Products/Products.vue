@@ -1,6 +1,6 @@
 <template>
   <div class="products-container">
-    <h2 class="products-title">Productos Desarrollados</h2>
+    <h2 class="products-title">Servicios Especializados</h2>
     
     <div class="products-carousel">
       <button class="carousel-btn prev" @click="prevSlide">‹</button>
@@ -42,7 +42,7 @@
 
 <script>
 import './Products.css'
-import productsData from './products.json'
+import productsData from './Products.json'
 
 export default {
   name: 'Products',
