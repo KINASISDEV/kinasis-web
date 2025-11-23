@@ -27,16 +27,16 @@
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  gap: 2rem;
+  gap: 1.6rem; /* reduced 20% */
 }
 
 .service-card-horizontal {
   display: flex;
-  gap: 2rem;
-  align-items: center;
+  gap: 1.6rem; /* reduced 20% */
+  align-items: stretch; /* allow children to fill vertical space */
   border-radius: 24px;
-  padding: 2.6rem 2.2rem;
-  min-height: 220px;
+  padding: 2.08rem 1.76rem; /* reduced 20% */
+  min-height: 352px; /* reduced 20% */
   background: #ebe7e1;
   border: 1px solid rgba(215,38,56,0.12);
   backdrop-filter: blur(10px) saturate(120%);
@@ -49,7 +49,7 @@
 }
 
 .service-card-horizontal:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px); /* scaled translate */
   box-shadow: 0 18px 40px rgba(215,38,56,0.18), inset 0 2px 6px rgba(255,255,255,0.08);
   background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
   border-color: rgba(215,38,56,0.22);
@@ -70,29 +70,62 @@
 }
 
 .service-icon {
-  min-width: 140px;
-  min-height: 140px;
-  max-width: 140px;
-  max-height: 140px;
-  border-radius: 16px;
+  min-width: 168px; /* 20% smaller than 210px */
+  max-width: 168px;
+  width: 168px;
+  height: 75%; /* reduce vertical size to 75% of card height */
+  min-height: auto;
+  max-height: none;
+  border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: #dbb7b7;
-  transition: background .25s ease, transform .25s ease;
-  padding: 0.75rem;
+  background: transparent; /* no background so only the image is visible */
+  transition: background .25s ease, transform .25s ease, width .35s ease, height .35s ease, padding .25s ease, box-shadow .35s ease;
+  padding: 0.4rem; /* reduced 20% */
+  box-sizing: border-box;
+  align-self: center; /* center the icon vertically now that it doesn't fill the card */
 }
 
 .service-icon img {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  transition: transform .25s ease;
+  object-fit: cover; /* fill the container */
+  object-position: 50% 0%; /* shift image 30% up from current; capped at 0% (top) */
+  transition: transform .25s ease, border-radius .25s ease, box-shadow .25s ease;
+  border-radius: 12px; /* base rounding inside container */
 }
 
 .service-card-horizontal:hover .service-icon img {
   transform: scale(1.1);
+}
+
+/* Hover expand preview on pointer devices */
+@media (hover: hover) and (pointer: fine) {
+  .service-card-horizontal:hover { z-index: 3; }
+    .service-card-horizontal:hover {
+      z-index: 3;
+      overflow: visible; /* allow children to overflow */
+    }
+    .service-card-horizontal:hover .service-icon {
+      width: 360px; /* more space so image can expand */
+      height: 100%;
+      padding: 0.6rem;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+      overflow: visible; /* show scaled image outside container */
+      transform: translateZ(0); /* promote for smoother rendering */
+    }
+  .service-card-horizontal:hover .service-icon img {
+    object-fit: contain;
+    object-position: 50% 50%;
+    transform: scale(1.3); /* make the image larger on hover */
+    border-radius: 20px; /* rounding when expanded */
+    box-shadow: 0 22px 50px rgba(0,0,0,0.22); /* create floating effect */
+    transform-origin: center center;
+    will-change: transform;
+  }
 }
 
 .service-content h3 {
@@ -112,6 +145,12 @@
   line-height: 1.5;
 }
 
+.service-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertically center content to match icon stretching */
+}
+
 .dark .service-card-horizontal {
   background: linear-gradient(
       180deg,
@@ -128,7 +167,7 @@
 }
 
 .dark .service-icon {
-  background: rgba(69,204,172,0.08);
+  background: transparent; /* remove background in dark mode too */
 }
 
 .dark .service-content h3 {
@@ -154,6 +193,6 @@
 
 @media (max-width: 768px) {
   .services-grid { grid-template-columns: 1fr; }
-  .service-card-horizontal { flex-direction: column; text-align: center; }
-  .service-icon { min-width: 100px; min-height: 100px; max-width: 100px; max-height: 100px; }
+  .service-card-horizontal { flex-direction: column; text-align: center; align-items: center; }
+  .service-icon { min-width: 120px; width: 120px; height: 120px; max-width: 120px; max-height: 120px; padding: 0.32rem; }
   }
