@@ -146,6 +146,24 @@
   color: #45CCAC;
 }
 
+/* Local brand color for this component only (matches .section-title colors) */
+.brand-word {
+  color: var(--brand-red);
+  font-weight: 700;
+}
+.dark .brand-word {
+  color: #45CCAC;
+}
+
+/* Ensure `brand-word` overrides the parent text color in methodology text */
+.methodology-text .brand-word {
+  color: var(--brand-red);
+  font-weight: 700;
+}
+.dark .methodology-text .brand-word {
+  color: #45CCAC;
+}
+
 .methodology-subtitle {
   font-size: clamp(1.3rem, 2.5vw, 1.8rem);
   font-weight: 600;

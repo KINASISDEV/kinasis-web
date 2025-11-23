@@ -66,6 +66,21 @@
   object-fit: cover;
 }
 
+/* Icon mode: center icon (SVG) in a smaller area */
+.product-image.icon {
+  height: 120px; /* smaller height for icons */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+.product-image.icon img {
+  width: auto;
+  height: 80px;
+  max-width: 120px;
+  object-fit: contain;
+}
+
 .product-info {
   padding: 1.5rem;
 }
@@ -160,6 +175,8 @@
   color: #0d0f11;
   box-shadow: 0 4px 12px rgba(69,204,172,0.30);
 }
+
+/* Responsive rules not needed for tech badge */
 
 .dark .carousel-btn {
   background: linear-gradient(-45deg,#45CCAC,#3EBEAB,#36B3A4,#2E9F96);

@@ -19,6 +19,25 @@
     color: #ffffff;
 }
 
+/* style for the 'KINASIS' word across the About Us text; matches title color */
+.brand-word {
+  color: var(--brand-red);
+  font-weight: 700;
+}
+.dark .brand-word {
+  color: #45CCAC;
+}
+
+/* Color the list letters (A), B), C), D)) to match the AboutUs title in both themes */
+.list-letter {
+  color: var(--brand-red);
+  font-weight: 700;
+  margin-right: 0.35rem;
+}
+.dark .list-letter {
+  color: #45CCAC;
+}
+
 .about-container {
   padding: 2rem;
   max-width: 1200px;

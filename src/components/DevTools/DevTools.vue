@@ -80,7 +80,7 @@
 
         <section class="devtools-banner">
             <h1 class="devtools-main-title">Tecnologías que Manejamos</h1>
-            <p class="devtools-intro-text">En Kinasis, buscamos entrar en la vanguardia de las tecnologías emergentes del mercado.</p>
+            <p class="devtools-intro-text">En <span class="brand-word">Kinasis</span>, buscamos entrar en la vanguardia de las tecnologías emergentes del mercado.</p>
         </section>
 
         <div class="devtools-container">

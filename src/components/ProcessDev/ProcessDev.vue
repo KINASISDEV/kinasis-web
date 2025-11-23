@@ -11,7 +11,7 @@
                 <h1 class="section-title">¿Cómo Realizamos un Proyecto?</h1>
                 <h2 class="methodology-subtitle">Proceso Incremental</h2>
                 <p class="methodology-text">
-                    En KINASIS desarrollamos soluciones siguiendo un enfoque incremental, ideal para proyectos grandes o ideas que aún están madurando. Dividimos el trabajo en micro-entregas con tiempos definidos, 
+                    En <span class="brand-word">KINASIS</span> desarrollamos soluciones siguiendo un enfoque incremental, ideal para proyectos grandes o ideas que aún están madurando. Dividimos el trabajo en micro-entregas con tiempos definidos, 
                     lo que permite avanzar con claridad aun cuando la visión inicial del cliente no está completamente definida. 
                     Este enfoque nos permite documentar, diseñar, desarrollar y desplegar partes del proyecto de forma gradual, validando cada avance y ajustando el rumbo cuando es necesario.
                 </p>
