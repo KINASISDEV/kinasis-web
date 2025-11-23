@@ -2,6 +2,7 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 2.375rem 2rem;
+  overflow: visible; /* allow content to extend outside the container */
 }
 
 .services-title {
@@ -28,6 +29,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   gap: 1.6rem; /* reduced 20% */
+  overflow: visible; /* allow cards/hover to overflow */
 }
 
 .service-card-horizontal {
@@ -43,6 +45,7 @@
   -webkit-backdrop-filter: blur(10px) saturate(120%);
   box-shadow: 0 8px 30px rgba(215,38,56,0.12), inset 0 1px 0 rgba(255,255,255,0.06);
   transition: transform .35s ease, box-shadow .35s ease, background .35s ease, border-color .35s ease;
+  overflow: visible; /* ensure children can overflow if needed */
   cursor: default;
   position: relative;
   z-index: 1;
@@ -53,6 +56,7 @@
   box-shadow: 0 18px 40px rgba(215,38,56,0.18), inset 0 2px 6px rgba(255,255,255,0.08);
   background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
   border-color: rgba(215,38,56,0.22);
+  overflow: visible; /* ensure hover overflow works */
 }
 
 .service-card-horizontal::before {
@@ -70,9 +74,8 @@
 }
 
 .service-icon {
-  min-width: 168px; /* 20% smaller than 210px */
-  max-width: 168px;
-  width: 168px;
+  min-width: 120px; /* allow it to shrink but the width now can be overridden dynamically */
+  width: 168px; /* default width: overwritten by inline style if computed */
   height: 75%; /* reduce vertical size to 75% of card height */
   min-height: auto;
   max-height: none;
@@ -82,11 +85,21 @@
   justify-content: center;
   overflow: hidden;
   background: transparent; /* no background so only the image is visible */
-  transition: background .25s ease, transform .25s ease, width .35s ease, height .35s ease, padding .25s ease, box-shadow .35s ease;
+  transition: background .25s ease, transform .25s ease, height .35s ease, padding .25s ease, box-shadow .35s ease;
   padding: 0.4rem; /* reduced 20% */
   box-sizing: border-box;
   align-self: center; /* center the icon vertically now that it doesn't fill the card */
 }
+
+/* Wide containers should have a larger minimum width so wide images show larger */
+.service-icon.wide {
+  min-width: 320px;
+  max-width: none;
+  width: auto; /* allow dynamic inline width to take effect */
+}
+
+/* enable width transition only after the image is loaded and width is computed */
+/* width transition previously gated by loaded state removed */
 
 .service-icon img {
   display: block;
@@ -98,8 +111,17 @@
   border-radius: 12px; /* base rounding inside container */
 }
 
+/* Wide images should be contained to show the full width proportionally */
+.service-icon.wide img {
+  object-fit: contain;
+  width: auto; /* keep height so it fits vertically and width can expand */
+  height: 100%;
+}
+
 .service-card-horizontal:hover .service-icon img {
-  transform: scale(1.1);
+  transform: scale(1.4); /* make the image larger on hover (40%) */
+  transform-origin: center center;
+  will-change: transform;
 }
 
 /* Hover expand preview on pointer devices */
@@ -110,21 +132,28 @@
       overflow: visible; /* allow children to overflow */
     }
     .service-card-horizontal:hover .service-icon {
-      width: 360px; /* more space so image can expand */
       height: 100%;
       padding: 0.6rem;
       box-shadow: 0 18px 40px rgba(0,0,0,0.12);
       overflow: visible; /* show scaled image outside container */
       transform: translateZ(0); /* promote for smoother rendering */
+      z-index: 40;
+      position: relative;
     }
   .service-card-horizontal:hover .service-icon img {
     object-fit: contain;
     object-position: 50% 50%;
-    transform: scale(1.3); /* make the image larger on hover */
+    transform: scale(1.4); /* make the image larger on hover (40%) */
     border-radius: 20px; /* rounding when expanded */
     box-shadow: 0 22px 50px rgba(0,0,0,0.22); /* create floating effect */
     transform-origin: center center;
     will-change: transform;
+  }
+  .service-card-horizontal:hover .service-icon.wide img {
+    transform: scale(1.4) translateX(20%);
+  }
+  .service-card-horizontal:hover .service-icon.tall img {
+    transform: scale(1.4) translateY(-20%);
   }
 }
 

@@ -15,8 +15,8 @@
             opacity: index === currentIndex ? 1 : 0.3
           }"
         >
-          <div class="product-image">
-            <img :src="product.image" :alt="product.name" />
+          <div :class="['product-image', { icon: product.icon }]">
+            <img :src="product.icon || product.image" :alt="product.name + (product.icon ? ' icon' : '')" />
           </div>
           <div class="product-info">
             <h3>{{ product.name }}</h3>
