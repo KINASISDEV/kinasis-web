@@ -42,7 +42,7 @@
 
 <script>
 import './Products.css'
-import productsData from './products.json'
+import productsData from './Products.json'
 
 export default {
   name: 'Products',
