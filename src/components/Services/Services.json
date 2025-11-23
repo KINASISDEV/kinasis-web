@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Landign Page",
     "description": "Aplicacion web para adquirir membresias de Norton a traves de sistemas de pago con Stripe, guardando datos de compra y procesamiento de pagos.",
-    "image": "./products/huvytas_Prod.png"
+    "image": "/products/huvytas_Prod.png"
   },
   {
     "id": 2,
