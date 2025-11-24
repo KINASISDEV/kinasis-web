@@ -12,35 +12,35 @@
     margin: 2rem auto 6rem auto;
     max-width: 90%;
     border-radius: 60px 40px 80px 30px;
-    background: linear-gradient(-45deg, 
-        #D72638, 
-        #FF4757, 
-        #D72638, 
+    background: linear-gradient(-45deg,
+        #D72638,
+        #FF4757,
+        #D72638,
         #B91E32);
     background-size: 400% 400%;
     animation: gradientShift 8s ease infinite, morphShape 12s ease-in-out infinite;
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     border: none;
-    box-shadow: 
+    box-shadow:
         0 8px 32px rgba(215, 38, 56, 0.3),
         0 16px 64px rgba(215, 38, 56, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.2),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.1);    
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
     transform: perspective(1000px) rotateX(2deg);
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .dark .banner-contact {
-    background: linear-gradient(-45deg, 
-        #45CCAC, 
-        #3EBEAB, 
-        #36B3A4, 
+    background: linear-gradient(-45deg,
+        #45CCAC,
+        #3EBEAB,
+        #36B3A4,
         #2E9F96);
     background-size: 400% 400%;
     animation: gradientShift 8s ease infinite, morphShape 12s ease-in-out infinite;
     border: none;
-    box-shadow: 
+    box-shadow:
         0 8px 32px rgba(69, 204, 172, 0.3),
         0 16px 64px rgba(69, 204, 172, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.2),
@@ -84,7 +84,7 @@
     font-size: clamp(1.8rem, 4vw, 3rem);
     font-weight: 700;
     color: white;
-    text-shadow: 
+    text-shadow:
         0 4px 8px rgba(0, 0, 0, 0.5),
         0 0 20px rgba(255, 255, 255, 0.3),
         0 0 40px rgba(255, 255, 255, 0.1);
@@ -98,7 +98,7 @@
 
 .dark .banner-contact h1 {
     color: #000000;
-    text-shadow: 
+    text-shadow:
         0 4px 8px rgba(255, 255, 255, 0.3),
         0 0 20px rgba(0, 0, 0, 0.2),
         0 0 40px rgba(0, 0, 0, 0.1);
@@ -150,7 +150,7 @@
     border-radius: 20px;
     padding: 1.5rem;
     background: linear-gradient(
-        180deg, 
+        180deg,
         rgba(255,255,255,0.06),
         rgba(255,255,255,0.02));
     border: 1px solid rgba(215,38,56,0.12);
@@ -196,7 +196,7 @@
 
 .dark .info-box {
   background: linear-gradient(
-    180deg, 
+    180deg,
     rgba(69,204,172,0.06),
     rgba(69,204,172,0.02));
   border: 1px solid rgba(69,204,172,0.12);
@@ -228,8 +228,8 @@
     border-radius: 24px;
     padding: 1.6rem;
     background: linear-gradient(
-    135deg, 
-    rgba(255,255,255,0.06), 
+    135deg,
+    rgba(255,255,255,0.06),
     rgba(255,255,255,0.03));
     border: 1px solid rgba(255,255,255,0.12);
     box-shadow: 0 12px 36px rgba(0,0,0,0.12);
@@ -266,7 +266,7 @@
 .form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem 1rem; 
+    gap: 2rem 1rem;
 }
 
 .contact-form input,
@@ -312,10 +312,10 @@
     border: none;
     border-radius: 12px;
     flex: 1;
-    min-width: 0; 
+    min-width: 0;
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     padding: 0.8rem 1.2rem;
     font-weight: 600;
     cursor: pointer;
@@ -324,10 +324,10 @@
 }
 
 .dark .send-btn {
-  background: linear-gradient(-45deg, 
-    #45CCAC, 
-    #3EBEAB, 
-    #36B3A4, 
+  background: linear-gradient(-45deg,
+    #45CCAC,
+    #3EBEAB,
+    #36B3A4,
     #2E9F96);
   color: snow;
   box-shadow: 0 10px 30px rgba(69, 204, 172, 0.18);
@@ -484,7 +484,7 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* ANIMACIONES DEL MODAL */
+
 @keyframes modalFadeIn {
   from {
     opacity: 0;
@@ -509,7 +509,7 @@
   .contact-content { grid-template-columns: 1fr; }
   .form-grid { grid-template-columns: 1fr; }
   .banner-contact { padding: 2rem 1.2rem; width: auto; margin: 1.2rem; }
-  
+
   .modal-content {
     margin: 1rem;
     padding: 1.5rem;

@@ -1,0 +1,86 @@
+
+.header { padding: 2rem 1.75rem; background: transparent; }
+
+
+@media (max-width: 768px) {
+  .header { padding: 0.75rem 1rem; }
+  .nav-links { display: none !important; }
+
+
+  .github-btn { display: none !important; }
+  .brand-title { font-size: 1rem; }
+
+
+  #menuToggle { display: inline-flex; align-items: center; padding: 0.35rem; border-radius: 6px; background: transparent; }
+  #menuToggle svg { width: 20px; height: 20px; }
+  #menuToggle svg { transition: transform 420ms cubic-bezier(.22,.9,.32,1); }
+  #menuToggle .line { transition: transform 420ms cubic-bezier(.22,.9,.32,1), opacity 420ms ease; transform-origin: center; }
+  #menuToggle .line1, #menuToggle .line3 { transform-origin: center; }
+
+
+  #menuToggle.open svg { transform: rotate(90deg); }
+  #menuToggle.open .line1 { transform: translateY(5px) scaleX(0.18); opacity: 0; }
+  #menuToggle.open .line3 { transform: translateY(-5px) scaleX(0.18); opacity: 0; }
+
+  #menuToggle.open .line2 { transform: rotate(-90deg) translateY(-4px) scaleX(1.1); }
+
+
+
+
+
+  .nav-links-mobile { display: none; position: fixed; inset: var(--header-h, 64px) 0 0 0; height: calc(100vh - var(--header-h, 64px)); background: rgba(215,38,56,0.88); color: #fff; border-radius: 0; box-shadow: none; padding: 0; z-index: 40; width: 100% !important; max-width: none; margin: 0; box-sizing: border-box; transform: none !important; }
+  .dark .nav-links-mobile { background: rgba(69,204,172,0.88); }
+
+  .dark .nav-links-mobile .nav-link { color: #1c1c1c; }
+  .dark .nav-links-mobile .nav-link::after { background: #1c1c1c; }
+  .nav-links-mobile > div { display:flex; flex-direction:column; align-items:flex-end; gap:2.5rem; padding:4.2rem 1.5rem 2.4rem 1.5rem; }
+  .nav-links-mobile .nav-link { display:flex; justify-content:flex-end; align-items:center; gap:0.75rem; padding:0.8rem 0; margin:0; color:#fff; font-size:1.5rem; font-weight:800; width:100%; opacity:0; transform: translateY(-14px); position:relative; }
+  .nav-links-mobile .nav-link:hover { filter:brightness(0.95); }
+
+
+  .nav-links-mobile .nav-link::after { content: ""; display:inline-block; width:44px; height:3px; background: rgba(255,255,255,0.95); border-radius: 6px; transform-origin: left center; transform: scaleX(0); transition: transform 420ms cubic-bezier(.22,.9,.32,1); }
+  .nav-links-mobile .nav-link:hover::after, .nav-links-mobile .nav-link.active::after { transform: scaleX(1); }
+  .nav-links-mobile .nav-link:hover { filter:brightness(0.95); }
+
+
+  @keyframes slideDownFade {
+    from { opacity: 0; transform: translateY(-22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+
+  .nav-links-mobile.open > div .nav-link:nth-child(1) { animation: slideDownFade 760ms cubic-bezier(.22,.9,.32,1) forwards; animation-delay: 0ms; }
+  .nav-links-mobile.open > div .nav-link:nth-child(2) { animation: slideDownFade 760ms cubic-bezier(.22,.9,.32,1) forwards; animation-delay: 160ms; }
+  .nav-links-mobile.open > div .nav-link:nth-child(3) { animation: slideDownFade 760ms cubic-bezier(.22,.9,.32,1) forwards; animation-delay: 320ms; }
+  .nav-links-mobile.open > div .nav-link:nth-child(4) { animation: slideDownFade 760ms cubic-bezier(.22,.9,.32,1) forwards; animation-delay: 480ms; }
+  .nav-links-mobile.open > div .nav-link:nth-child(5) { animation: slideDownFade 760ms cubic-bezier(.22,.9,.32,1) forwards; animation-delay: 640ms; }
+  .nav-links-mobile.open > div .nav-link:nth-child(6) { animation: slideDownFade 760ms cubic-bezier(.22,.9,.32,1) forwards; animation-delay: 800ms; }
+}
+
+
+.nav-links-mobile.open { display: block !important; }
+
+
+@media (max-width: 768px) {
+  .nav-links-mobile { transform-origin: top center; transition: transform 210ms cubic-bezier(.22,.9,.32,1), opacity 180ms ease; opacity: 0; transform: translateY(-6px) scale(0.995); }
+  .nav-links-mobile.open { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+
+.nav-links-mobile { max-height: calc(100vh - var(--header-h, 64px)); overflow-y: auto; }
+
+
+
+  .nav-links-mobile::after { display:none; }
+  .dark .nav-links-mobile::after { display:none; }
+
+
+.header .brand-title { margin-left: 0.5rem; }
+.theme-toggle { margin-left: 0.5rem; }
+
+
+@media (min-width: 769px) {
+  .nav-links { display: flex !important; }
+  .nav-links-mobile { display: none !important; }
+  .github-btn { display: inline-flex !important; }
+}

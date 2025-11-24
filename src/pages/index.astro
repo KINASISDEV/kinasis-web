@@ -14,43 +14,115 @@ import Contact from '../components/Contact/Contact.vue'
 ---
 
 <Layout>
-  <Banner client:load />
+  <Banner />
   <main class="main-content pt-28 max-w-7xl mx-auto px-6">
     <div style="padding-top: 0;">
-      <AboutUs client:load />
+      <AboutUs />
     </div>
     <div style="padding-top: 0;">
-      <OurVision client:load />
+      <OurVision />
     </div>
     <div style="padding-top: 0;">
-      <Goals client:load />
+      <Goals />
     </div>
     <div style="padding-top: 0;">
-      <Foundators client:load />
+      <Foundators />
     </div>
     <div style="padding-top: 0;">
-      <Team client:load />
+      <Team />
     </div>
     <div style="padding-top: 0;">
-      <ReadyWork client:load />
+      <ReadyWork />
     </div>
     <div style="padding-top: 0;">
-      <Services client:load />
+      <Services />
     </div>
     <div style="padding-top: 0;">
-      <ProcessDev client:load />
+      <ProcessDev />
     </div>
     <div style="padding-top: 0;">
-      <DevTools client:load />
+      <DevTools />
     </div>
     <div style="padding-top: 0;">
-      <Contact client:load />
+      <Contact />
     </div>
   </main>
+
+  <script src="/js/index-hydrate.js" defer></script>
 </Layout>
 
 <style>
   .main-content > div {
     margin-top: -10px;
   }
+
+  @media (max-width: 768px) {
+    .main-content > div > .Banner,
+    .main-content .about-section,
+    .main-content .services-container,
+    .main-content .readywork-container,
+    .main-content .process-container,
+    .main-content .devtools-container,
+    .main-content .contact-container,
+    .main-content .foundators-text-container,
+    .main-content .team-container {
+      animation: none !important;
+      transform: none !important;
+    }
+
+    .main-content > div > .Banner::before,
+    .main-content > div > .Banner::after,
+    .main-content .about-section::after {
+      animation: none !important;
+      transform: none !important;
+    }
+  }
+
+
+
+  @media (max-width: 1024px) {
+    .main-content {
+      width: 100% !important;
+      max-width: none !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      transform: none !important;
+      left: 0 !important;
+      transition: none !important;
+      animation: none !important;
+      position: relative !important;
+    }
+    .main-content > div { margin-left: 0 !important; margin-right: 0 !important; }
+    }
+    @media (max-width: 1024px) {
+      html, body { overflow-x: hidden !important; }
+    }
+
+
+    @media (max-width: 768px) {
+      .main-content .about-section {
+        max-height: 220px;
+        overflow: hidden;
+        position: relative;
+        transition: max-height 300ms ease;
+      }
+      .main-content .about-section.expanded {
+        max-height: 9999px;
+      }
+      .main-content .about-section .read-more {
+        position: absolute;
+        bottom: 8px;
+        right: 10px;
+        background: rgba(255,255,255,0.08);
+        border-radius: 999px;
+        padding: 6px 10px;
+        cursor: pointer;
+        font-weight: 700;
+        backdrop-filter: blur(4px);
+        color: #fff;
+        z-index: 3;
+        border: 1px solid rgba(255,255,255,0.12);
+        font-size: 0.85rem;
+      }
+    }
 </style>

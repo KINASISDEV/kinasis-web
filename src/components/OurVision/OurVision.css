@@ -51,12 +51,12 @@
   margin: 3rem auto;
   max-width: 900px;
   border-radius: 30px;
-  background: linear-gradient(135deg, 
-    rgba(215, 38, 56, 0.08) 0%, 
+  background: linear-gradient(135deg,
+    rgba(215, 38, 56, 0.08) 0%,
     rgba(255, 71, 87, 0.12) 50%,
     rgba(215, 38, 56, 0.08) 100%);
   border: 2px solid rgba(215, 38, 56, 0.2);
-  box-shadow: 
+  box-shadow:
     0 10px 40px rgba(215, 38, 56, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
@@ -91,12 +91,12 @@
 }
 
 .dark .vision-statement {
-  background: linear-gradient(135deg, 
-    rgba(69, 204, 172, 0.08) 0%, 
+  background: linear-gradient(135deg,
+    rgba(69, 204, 172, 0.08) 0%,
     rgba(62, 190, 171, 0.12) 50%,
     rgba(69, 204, 172, 0.08) 100%);
   border: 2px solid rgba(69, 204, 172, 0.2);
-  box-shadow: 
+  box-shadow:
     0 10px 40px rgba(69, 204, 172, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
   color: #F3F4F6;
@@ -109,13 +109,13 @@
 
 .vision-statement:hover {
   transform: translateY(-5px);
-  box-shadow: 
+  box-shadow:
     0 15px 50px rgba(215, 38, 56, 0.15),
     inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .dark .vision-statement:hover {
-  box-shadow: 
+  box-shadow:
     0 15px 50px rgba(69, 204, 172, 0.15),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
@@ -259,7 +259,7 @@
   }
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .vision-section {
     padding: 2.375rem 1.5rem;
