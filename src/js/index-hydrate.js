@@ -1,7 +1,4 @@
-
-
-
-
+// Moved from public/js/index-hydrate.js
 
 (function () {
   function safeNumber(n, fallback = 0) {
@@ -187,6 +184,7 @@
   }
 
   function addReadMoreToAboutSections() {
+    if (typeof window !== 'undefined' && window.location && window.location.pathname === '/') return
     const aboutSections = Array.from(document.querySelectorAll('.main-content .about-section'))
     aboutSections.forEach(section => {
 

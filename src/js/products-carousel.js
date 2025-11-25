@@ -1,3 +1,4 @@
+// Moved from public/js/products-carousel.js
 
 (function () {
   function initAll() {

@@ -34,9 +34,9 @@
         "foto":"/TeamMedia/JoshuaImage.png",
         "frase":"Creando experiencias digitales.",
         "roles":["CTO","FullStack Developer", "UI/UX Designer"],
-        "portafolio":"",
-        "linkedin":"",
-        "github":"",
+        "portafolio":"https://joshua-portafolio.netlify.app/#home",
+        "linkedin":"https://www.linkedin.com/in/joshua-ramirez-gonz%C3%A1lez-33350b21a/",
+        "github":"https://github.com/joshuatreides-art",
         "cv":"https://drive.google.com/drive/folders/1cBUfX9Z-e23e99LQogRCj0rBhLiTJ7WI"
     }
 ]

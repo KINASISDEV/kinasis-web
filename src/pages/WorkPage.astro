@@ -10,5 +10,5 @@ import Services from '../components/Services/Services.vue';
     <Services />
   </main>
 
-  <script src="/js/products-carousel.js" defer></script>
+  <script type="module" src={new URL('../js/products-carousel.js', import.meta.url).href} defer></script>
 </Layout>
