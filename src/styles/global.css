@@ -153,9 +153,16 @@ html, body {
 	border-bottom-color: rgba(215, 38, 56, 0.15);
 }
 
-.brand-title,
+brand-title,
 .nav-links .nav-link,
 .github-btn,
 .header {
 	transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.fade-overlay {
+	pointer-events: none !important;
+	position: absolute !important;
+	inset: 0 !important;
+	background: transparent !important;
 }

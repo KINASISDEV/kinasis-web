@@ -69,8 +69,8 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import { handleContactForm } from './Contact.js' 
-import './Contact.css' 
+import { handleContactForm } from './Contact.js'
+import './Contact.css'
 
 const form = ref({
   name: '',
@@ -118,7 +118,7 @@ function closeModal() {
   }, 300)
 }
 
-// Función para mostrar estado temporal
+
 function showTempStatus(message, type = 'info') {
   tempStatus.value = message
   tempStatusClass.value = type
@@ -130,41 +130,41 @@ function showTempStatus(message, type = 'info') {
 
 async function handleSubmit() {
   console.log('🎯 Formulario enviado desde Vue component')
-  
-  // Mostrar estado de carga
+
+
   sending.value = true
   showTempStatus('Enviando mensaje...', 'sending')
-  
+
   try {
-    // Llamar a la función que maneja toda la lógica
+
     const response = await handleContactForm(form.value)
-    
-    // Quitar estado temporal
+
+
     tempStatus.value = ''
-    
+
     if (response.success) {
-      // Éxito: mostrar modal y limpiar formulario
+
       showSuccessModal()
       if (response.clearForm) {
-        form.value = { 
-          name: '', 
-          email: '', 
-          phone: '', 
-          company: '', 
-          message: '' 
+        form.value = {
+          name: '',
+          email: '',
+          phone: '',
+          company: '',
+          message: ''
         }
       }
     } else {
-      // Error: mostrar modal de error
+
       showErrorModal(response.message)
     }
-    
+
   } catch (error) {
-    // Error inesperado
+
     console.error('💥 Error inesperado en handleSubmit:', error)
     showErrorModal('Error inesperado. Por favor intenta de nuevo.')
   } finally {
-    // Quitar estado de carga
+
     sending.value = false
   }
 }

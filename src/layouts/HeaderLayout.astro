@@ -1,5 +1,6 @@
 ---
 const currentPath = Astro.url.pathname;
+import "./HeaderLayout.css";
 ---
 <script>
   document.addEventListener("DOMContentLoaded", () => {
@@ -29,7 +30,7 @@ const currentPath = Astro.url.pathname;
         const oldStyle = document.querySelector("style[data-theme-logo]");
         if (oldStyle) oldStyle.remove();
 
-        // Insertar nuevo estilo inline para futuras recargas
+
         const style = document.createElement("style");
         style.dataset.themeLogo = "true";
         style.textContent = `img#brandLogo{content:url('/KINASIS_logo_verde.png') !important;}`;
@@ -48,6 +49,78 @@ const currentPath = Astro.url.pathname;
         document.head.appendChild(style);
       }
     });
+
+    const headerEl = document.querySelector('.header');
+    if (headerEl && headerEl instanceof HTMLElement) {
+      const setHeaderHeightVar = () => {
+        document.documentElement.style.setProperty('--header-h', `${headerEl.offsetHeight}px`);
+      };
+      setHeaderHeightVar();
+      window.addEventListener('resize', setHeaderHeightVar);
+    }
+
+
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    if (menuToggle && mobileNav) {
+
+      mobileNav.classList.add('hidden');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.addEventListener('click', () => {
+        const isHidden = mobileNav.classList.contains('hidden');
+        if (isHidden) {
+          mobileNav.classList.remove('hidden');
+          mobileNav.classList.add('open');
+          mobileNav.setAttribute('aria-hidden', 'false');
+          menuToggle.setAttribute('aria-expanded', 'true');
+          menuToggle.classList.add('open');
+
+          document.body.style.overflow = 'hidden';
+        } else {
+          mobileNav.classList.add('hidden');
+          mobileNav.classList.remove('open');
+          mobileNav.setAttribute('aria-hidden', 'true');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+
+      mobileNav.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileNav.classList.add('hidden');
+          mobileNav.classList.remove('open');
+          mobileNav.setAttribute('aria-hidden', 'true');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          document.documentElement.style.overflow = '';
+        });
+      });
+
+      document.addEventListener('click', (ev) => {
+        if (!mobileNav.classList.contains('hidden')) {
+          const target = ev.target;
+          if (target instanceof Node) {
+            if (!mobileNav.contains(target) && !menuToggle.contains(target)) {
+              mobileNav.classList.add('hidden');
+              mobileNav.classList.remove('open');
+              mobileNav.setAttribute('aria-hidden', 'true');
+              menuToggle.setAttribute('aria-expanded', 'false');
+              document.documentElement.style.overflow = '';
+            }
+          }
+        }
+      });
+
+      document.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Escape' && !mobileNav.classList.contains('hidden')) {
+          mobileNav.classList.add('hidden');
+          mobileNav.classList.remove('open');
+          mobileNav.setAttribute('aria-hidden', 'true');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          document.documentElement.style.overflow = '';
+        }
+      });
+    }
   });
 </script>
 
@@ -64,6 +137,14 @@ const currentPath = Astro.url.pathname;
     </div>
 
     <div class="flex items-center">
+
+      <button id="menuToggle" aria-controls="mobileNav" aria-label="Abrir menú" aria-expanded="false" class="md:hidden mr-4 p-2 rounded bg-transparent border border-transparent focus:outline-none">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="menu-icon">
+          <rect class="line line1" x="3" y="6" width="18" height="2" rx="1" fill="currentColor"></rect>
+          <rect class="line line2" x="3" y="11" width="18" height="2" rx="1" fill="currentColor"></rect>
+          <rect class="line line3" x="3" y="16" width="18" height="2" rx="1" fill="currentColor"></rect>
+        </svg>
+      </button>
       <nav class="hidden md:flex space-x-6 nav-links mr-5">
       <a href="/HomePage" class={`nav-link ${currentPath === '/HomePage' ? 'active' : ''}`}>Sobre nosotros</a>
       <a href="/TeamWorkPage" class={`nav-link ${currentPath === '/TeamWorkPage' ? 'active' : ''}`}>Nuestro equipo</a>
@@ -88,6 +169,18 @@ const currentPath = Astro.url.pathname;
           ></span>
         </button>
       </div>
+
     </div>
   </div>
 </header>
+
+
+<nav id="mobileNav" role="menu" aria-hidden="true" class="nav-links-mobile md:hidden hidden">
+  <div class="flex flex-col">
+    <a href="/HomePage" role="menuitem" class={`nav-link ${currentPath === '/HomePage' ? 'active' : ''}`}>Sobre nosotros</a>
+    <a href="/TeamWorkPage" role="menuitem" class={`nav-link ${currentPath === '/TeamWorkPage' ? 'active' : ''}`}>Nuestro equipo</a>
+    <a href="/WorkPage" role="menuitem" class={`nav-link ${currentPath === '/WorkPage' ? 'active' : ''}`}>Servicios</a>
+    <a href="/TecnologiesPage" role="menuitem" class={`nav-link ${currentPath === '/TecnologiesPage' ? 'active' : ''}`}>Tecnologias</a>
+    <a href="/ContactPage" role="menuitem" class={`nav-link ${currentPath === '/ContactPage' ? 'active' : ''}`}>Contacto</a>
+  </div>
+</nav>

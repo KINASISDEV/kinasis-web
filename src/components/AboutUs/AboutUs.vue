@@ -9,7 +9,7 @@
         <h1 class="title-aboutUs">Sobre Nosotros</h1>
         <p class="parrafo">En <span class="brand-word">KINASIS</span> creemos que el futuro se construye con soluciones inteligentes, éticas y centradas en las personas. Buscamos ser un referente en el sector tecnológico, aportando valor a través de proyectos sólidos, estéticamente impecables y funcionalmente eficientes.</p>
         <p class="parrafo">Nos especializamos en desarrollo web, aplicaciones de escritorio (para Windows y macOS), sistemas integrales, ecosistemas digitales personalizados y análisis y normalización de datos.</p>
-        <p class="parrafo">Actualmente estamos expandiendo nuestro campo hacia el desarrollo de aplicaciones móviles y nuevas tecnologías.</p>      
+        <p class="parrafo">Actualmente estamos expandiendo nuestro campo hacia el desarrollo de aplicaciones móviles y nuevas tecnologías.</p>
       </div>
       <div class="container-image">
       </div>
