@@ -221,7 +221,80 @@
 }
 
 @media (max-width: 768px) {
-  .services-grid { grid-template-columns: 1fr; }
-  .service-card-horizontal { flex-direction: column; text-align: center; align-items: center; }
-  .service-icon { min-width: 120px; width: 120px; height: 120px; max-width: 120px; max-height: 120px; padding: 0.32rem; }
+  .services-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 1rem;
   }
+
+  .service-card-horizontal {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    min-height: auto;
+    padding: 1.5rem 1rem;
+  }
+
+  .service-icon {
+    min-width: 150px;
+    width: 150px;
+    height: 150px;
+    max-width: 150px;
+    max-height: 150px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .service-icon.wide {
+    min-width: 200px;
+    width: 200px;
+    max-width: 200px;
+  }
+
+  .service-content {
+    width: 100%;
+  }
+
+  .service-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .service-content p {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-grid {
+    max-width: 100%;
+    padding: 0 0.5rem;
+  }
+
+  .service-card-horizontal {
+    padding: 1.25rem 1rem;
+  }
+
+  .service-icon {
+    min-width: 130px;
+    width: 130px;
+    height: 130px;
+    max-width: 130px;
+    max-height: 130px;
+  }
+
+  .service-icon.wide {
+    min-width: 180px;
+    width: 180px;
+    max-width: 180px;
+  }
+
+  .service-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .service-content p {
+    font-size: 0.85rem;
+  }
+}
