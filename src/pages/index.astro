@@ -8,6 +8,7 @@ import Foundators from '../components/Foundators/Foundators.vue'
 import Team from '../components/Team/Team.jsx'
 import Services from '../components/Services/Services.vue'
 import ReadyWork from '../components/ReadyWork/ReadyWork.vue'
+import Products from '../components/Services/Products/Products.vue'
 import ProcessDev from '../components/ProcessDev/ProcessDev.vue'
 import DevTools from '../components/DevTools/DevTools.vue'
 import Contact from '../components/Contact/Contact.vue'
@@ -16,41 +17,51 @@ import Contact from '../components/Contact/Contact.vue'
 <Layout>
   <Banner client:load />
   <main class="main-content pt-28 max-w-7xl mx-auto px-6">
-    <div style="padding-top: 0;">
-      <AboutUs client:load />
+    <div class="about-index-scope">
+      <AboutUs />
     </div>
-    <div style="padding-top: 0;">
-      <OurVision client:load />
-    </div>
-    <div style="padding-top: 0;">
-      <Goals client:load />
-    </div>
-    <div style="padding-top: 0;">
-      <Foundators client:load />
-    </div>
-    <div style="padding-top: 0;">
-      <Team client:load />
-    </div>
-    <div style="padding-top: 0;">
-      <ReadyWork client:load />
-    </div>
-    <div style="padding-top: 0;">
-      <Services client:load />
-    </div>
-    <div style="padding-top: 0;">
-      <ProcessDev client:load />
-    </div>
-    <div style="padding-top: 0;">
-      <DevTools client:load />
-    </div>
-    <div style="padding-top: 0;">
-      <Contact client:load />
-    </div>
+    <OurVision />
+    <Goals />
+    <Foundators />
+    <Team />
+    <ReadyWork>
+      <Products client:visible />
+    </ReadyWork>
+    <Services />
+    <ProcessDev />
+    <DevTools />
+    <Contact />
   </main>
+
+  <script src="/src/js/index-hydrate.js" defer></script>
+  <script is:inline>
+    (function(){
+      try {
+        if (typeof window !== 'undefined' && window.innerWidth <= 1024) {
+          document.querySelectorAll('.about-index-scope .about-section').forEach(el=>{
+            el.style.setProperty('width','auto','important');
+            el.style.setProperty('max-width','none','important');
+            el.style.setProperty('margin-left','0','important');
+            el.style.setProperty('margin-right','0','important');
+          });
+        }
+      } catch (e){}
+    })();
+  </script>
+
 </Layout>
 
 <style>
-  .main-content > div {
-    margin-top: -10px;
+  @media (max-width: 1024px) {
+    .about-index-scope .about-section{
+      width: auto !important;
+      max-width: none !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+
+  @media (max-width: 1024px){
+    html, body { overflow-x: hidden !important; }
   }
 </style>

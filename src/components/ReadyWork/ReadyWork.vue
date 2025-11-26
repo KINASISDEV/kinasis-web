@@ -16,7 +16,7 @@
       </div>
       
       <div class="readywork-section">
-        <Products />
+        <slot />
       </div>
     </div>
   </div>
@@ -25,10 +25,9 @@
 <script>
 import './ReadyWork.css'
 import PriorityProduct from '../Services/PriorityProduct/PriorityProduct.vue'
-import Products from '../Services/Products/Products.vue'
 
 export default {
   name: 'ReadyWork',
-  components: { PriorityProduct, Products }
+  components: { PriorityProduct }
 }
 </script>

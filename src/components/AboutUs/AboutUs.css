@@ -19,6 +19,25 @@
     color: #ffffff;
 }
 
+
+.brand-word {
+  color: var(--brand-red);
+  font-weight: 700;
+}
+.dark .brand-word {
+  color: #45CCAC;
+}
+
+
+.list-letter {
+  color: var(--brand-red);
+  font-weight: 700;
+  margin-right: 0.35rem;
+}
+.dark .list-letter {
+  color: #45CCAC;
+}
+
 .about-container {
   padding: 2rem;
   max-width: 1200px;
@@ -33,14 +52,16 @@
   align-self: flex-end;
   width: 100%;
   display: flex;
-  justify-content: flex-end; 
+  justify-content: flex-end;
+  min-width: 0; 
 }
 
 .left-align {
   align-self: flex-start;
   width: 100%;
   display: flex;
-  justify-content: flex-start; 
+  justify-content: flex-start;
+  min-width: 0; 
 }
 
 .logo-image {
@@ -63,7 +84,7 @@
     margin-bottom: 2rem;
     width: 60%;
     max-width: 900px;
-    height: 340px;
+    min-height: 200px;
     padding: 1.5rem;
     border-radius: 30px 20px 40px 15px;
     background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
@@ -127,35 +148,35 @@
   margin: 2rem auto 6rem auto;
   max-width: 90%;
   border-radius: 60px 40px 80px 30px;
-  background: linear-gradient(-45deg, 
-    #D72638, 
-    #FF4757, 
-    #D72638, 
+  background: linear-gradient(-45deg,
+    #D72638,
+    #FF4757,
+    #D72638,
     #B91E32);
   background-size: 400% 400%;
   animation: gradientShift 8s ease infinite, morphShape 12s ease-in-out infinite;
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border: none;
-  box-shadow: 
+  box-shadow:
     0 8px 32px rgba(215, 38, 56, 0.3),
     0 16px 64px rgba(215, 38, 56, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.2),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.1);    
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
   transform: perspective(1000px) rotateX(2deg);
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .dark .Banner {
-  background: linear-gradient(-45deg, 
-    #45CCAC, 
-    #3EBEAB, 
-    #36B3A4, 
+  background: linear-gradient(-45deg,
+    #45CCAC,
+    #3EBEAB,
+    #36B3A4,
     #2E9F96);
   background-size: 400% 400%;
   animation: gradientShift 8s ease infinite, morphShape 12s ease-in-out infinite;
   border: none;
-  box-shadow: 
+  box-shadow:
     0 8px 32px rgba(69, 204, 172, 0.3),
     0 16px 64px rgba(69, 204, 172, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.2),
@@ -164,15 +185,15 @@
 
 
 .dark .Banner h1 {
-  color: #000000; 
-  text-shadow: 
+  color: #000000;
+  text-shadow:
     0 4px 8px rgba(255, 255, 255, 0.3),
     0 0 20px rgba(0, 0, 0, 0.2),
     0 0 40px rgba(0, 0, 0, 0.1);
 }
 
 .dark .Banner h2 {
-  color: rgba(0, 0, 0, 0.8); 
+  color: rgba(0, 0, 0, 0.8);
   text-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
 }
 
@@ -181,7 +202,7 @@
   font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: 700;
   color: white;
-  text-shadow: 
+  text-shadow:
     0 4px 8px rgba(0, 0, 0, 0.5),
     0 0 20px rgba(255, 255, 255, 0.3),
     0 0 40px rgba(255, 255, 255, 0.1);
@@ -213,7 +234,7 @@
   left: -10%;
   right: -10%;
   bottom: -10%;
-  background: 
+  background:
     radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
     radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
     radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
@@ -230,7 +251,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
+  background-image:
     radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.2) 2px, transparent 2px),
     radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
     radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.1) 3px, transparent 3px),
@@ -253,61 +274,61 @@
 }
 
 @keyframes morphShape {
-  0% { 
+  0% {
     border-radius: 60px 40px 80px 30px;
     transform: perspective(1000px) rotateX(2deg) rotateY(0deg);
   }
-  25% { 
+  25% {
     border-radius: 40px 80px 30px 60px;
     transform: perspective(1000px) rotateX(1deg) rotateY(1deg);
   }
-  50% { 
+  50% {
     border-radius: 80px 30px 60px 40px;
     transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
   }
-  75% { 
+  75% {
     border-radius: 30px 60px 40px 80px;
     transform: perspective(1000px) rotateX(1deg) rotateY(-1deg);
   }
-  100% { 
+  100% {
     border-radius: 60px 40px 80px 30px;
     transform: perspective(1000px) rotateX(2deg) rotateY(0deg);
   }
 }
 
 @keyframes liquidFloat {
-  0%, 100% { 
+  0%, 100% {
     transform: rotate(0deg) scale(1);
     opacity: 0.8;
   }
-  33% { 
+  33% {
     transform: rotate(2deg) scale(1.02);
     opacity: 0.9;
   }
-  66% { 
+  66% {
     transform: rotate(-1deg) scale(0.98);
     opacity: 0.85;
   }
 }
 
 @keyframes bubbleFloat {
-  0% { 
+  0% {
     transform: translateY(0px) translateX(0px) rotate(0deg);
     background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
   }
-  25% { 
+  25% {
     transform: translateY(-5px) translateX(3px) rotate(1deg);
     background-position: 25% 25%, 25% 25%, 25% 25%, 25% 25%;
   }
-  50% { 
+  50% {
     transform: translateY(-8px) translateX(-2px) rotate(0deg);
     background-position: 50% 50%, 50% 50%, 50% 50%, 50% 50%;
   }
-  75% { 
+  75% {
     transform: translateY(-3px) translateX(4px) rotate(-1deg);
     background-position: 75% 75%, 75% 75%, 75% 75%, 75% 75%;
   }
-  100% { 
+  100% {
     transform: translateY(0px) translateX(0px) rotate(0deg);
     background-position: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
   }
@@ -326,13 +347,13 @@
 
 @keyframes textGlow {
   from {
-    text-shadow: 
+    text-shadow:
       0 4px 8px rgba(0, 0, 0, 0.5),
       0 0 20px rgba(255, 255, 255, 0.3),
       0 0 40px rgba(255, 255, 255, 0.1);
   }
   to {
-    text-shadow: 
+    text-shadow:
       0 4px 8px rgba(0, 0, 0, 0.5),
       0 0 30px rgba(255, 255, 255, 0.5),
       0 0 60px rgba(255, 255, 255, 0.2);
@@ -345,19 +366,68 @@
 }
 
 @keyframes sectionMorphShape {
-  0% { 
+  0% {
     border-radius: 30px 20px 40px 15px;
   }
-  25% { 
+  25% {
     border-radius: 20px 40px 15px 30px;
   }
-  50% { 
+  50% {
     border-radius: 40px 15px 30px 20px;
   }
-  75% { 
+  75% {
     border-radius: 15px 30px 20px 40px;
   }
-  100% { 
+  100% {
     border-radius: 30px 20px 40px 15px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .about-container {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 100%;
+    margin: 0;
+  }
+
+
+  .about-section {
+    width: 80vw;
+    max-width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    padding: 1rem;
+    padding-left: calc(1rem + env(safe-area-inset-left));
+    padding-right: calc(1rem + env(safe-area-inset-right));
+    height: auto;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+    margin-bottom: 1rem; 
+    transition: width 320ms ease, max-width 320ms ease, padding 280ms ease;
+    overflow: visible; 
+  }
+
+  .about-section::after {
+    left: 0%;
+    top: -1%;
+    width: 100%;
+    height: 40%;
+    transform: rotate(0deg);
+    opacity: 0.45;
+    mix-blend-mode: screen;
+  }
+
+  .logo-image {
+    width: 120px;
+    margin-left: 12px;
+  }
+
+  .Banner {
+    padding: 2.25rem 1rem;
+    margin: 1.5rem auto 3rem auto;
+    max-width: 100%;
+    border-radius: 28px;
   }
 }

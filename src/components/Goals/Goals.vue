@@ -1,9 +1,9 @@
 <template>
   <section class="goals-section">
     <h1 class="goals-title">Nuestras Metas</h1>
-    
+
     <div class="goals-timeline">
-      <!-- Corto Plazo -->
+
       <article class="goal-card short-term">
         <div class="goal-badge">📅 Corto Plazo</div>
         <div class="goal-content">
@@ -23,14 +23,14 @@
           <div class="goal-text">
             <h2>Ser referentes en Desarrollo de Software</h2>
             <p>
-              Consolidarnos como un equipo experto en desarrollo de software, entregando soluciones 
+              Consolidarnos como un equipo experto en desarrollo de software, entregando soluciones
               personalizadas y de alta calidad para aplicaciones web, móviles y sistemas empresariales.
             </p>
           </div>
         </div>
       </article>
 
-      <!-- Mediano Plazo -->
+
       <article class="goal-card medium-term">
         <div class="goal-badge">⚡ Mediano Plazo</div>
         <div class="goal-content">
@@ -51,14 +51,14 @@
           <div class="goal-text">
             <h2>Crear soluciones con IA y Automatización</h2>
             <p>
-              Integrar inteligencia artificial y automatización avanzada para desarrollar sistemas inteligentes 
+              Integrar inteligencia artificial y automatización avanzada para desarrollar sistemas inteligentes
               que optimicen procesos, reduzcan costos y mejoren la toma de decisiones mediante análisis predictivo.
             </p>
           </div>
         </div>
       </article>
 
-      <!-- Largo Plazo -->
+
       <article class="goal-card long-term">
         <div class="goal-badge">🚀 Largo Plazo</div>
         <div class="goal-content">
@@ -78,7 +78,7 @@
           <div class="goal-text">
             <h2>Reconocimiento Nacional e Internacional</h2>
             <p>
-              Posicionarnos como una empresa tecnológica de referencia en México y expandir nuestra presencia 
+              Posicionarnos como una empresa tecnológica de referencia en México y expandir nuestra presencia
               a mercados internacionales, siendo reconocidos por innovación, calidad y transformación digital.
             </p>
           </div>

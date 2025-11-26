@@ -8,7 +8,7 @@
                         Diseñamos sistemas robustos, escalables y mantenibles aplicando las mejores prácticas y patrones arquitectónicos de la industria
                     </p>
                 </div>
-                
+
                 <div class="devtools-architecture-grid">
                     <div class="devtools-architecture-card">
                         <div class="devtools-architecture-icon">
@@ -80,7 +80,7 @@
 
         <section class="devtools-banner">
             <h1 class="devtools-main-title">Tecnologías que Manejamos</h1>
-            <p class="devtools-intro-text">En Kinasis, buscamos entrar en la vanguardia de las tecnologías emergentes del mercado.</p>
+            <p class="devtools-intro-text">En <span class="brand-word">Kinasis</span>, buscamos entrar en la vanguardia de las tecnologías emergentes del mercado.</p>
         </section>
 
         <div class="devtools-container">
@@ -451,12 +451,12 @@
             </div>
         </div>
 
-        <!-- Aplicaciones Móviles -->
+
         <section class="devtools-innovation-section">
             <h2 class="devtools-innovation-title">Desarrollo Móvil Multiplataforma</h2>
             <p class="devtools-innovation-text">
-                Trabajamos continuamente para integrar a nuestros productos soluciones móviles multiplataforma con <strong>Flutter</strong> y <strong>React Native</strong>, 
-                permitiendo llevar nuestras aplicaciones a iOS y Android con una única base de código. Esto nos permite reducir tiempos de desarrollo, 
+                Trabajamos continuamente para integrar a nuestros productos soluciones móviles multiplataforma con <strong>Flutter</strong> y <strong>React Native</strong>,
+                permitiendo llevar nuestras aplicaciones a iOS y Android con una única base de código. Esto nos permite reducir tiempos de desarrollo,
                 mantener consistencia entre plataformas y ofrecer experiencias nativas de alta calidad.
             </p>
             <div class="devtools-tech-grid" style="justify-content: center; margin-top: 2rem;">
@@ -487,9 +487,9 @@
         <section class="devtools-innovation-section">
             <h2 class="devtools-innovation-title">Inteligencia Artificial y Redes Neuronales</h2>
             <p class="devtools-innovation-text">
-                Estamos implementando <strong>redes neuronales e Inteligencia Artificial</strong> para crear sistemas inteligentes capaces de aprender, 
-                predecir y optimizar procesos de manera autónoma. Desde modelos de <strong>Machine Learning</strong> para análisis predictivo hasta 
-                algoritmos de <strong>Deep Learning</strong> para reconocimiento de patrones complejos, integramos IA para agregar valor real y 
+                Estamos implementando <strong>redes neuronales e Inteligencia Artificial</strong> para crear sistemas inteligentes capaces de aprender,
+                predecir y optimizar procesos de manera autónoma. Desde modelos de <strong>Machine Learning</strong> para análisis predictivo hasta
+                algoritmos de <strong>Deep Learning</strong> para reconocimiento de patrones complejos, integramos IA para agregar valor real y
                 diferenciación competitiva a cada proyecto, transformando datos en decisiones inteligentes.
             </p>
             <div class="devtools-tech-grid" style="justify-content: center; margin-top: 2rem;">

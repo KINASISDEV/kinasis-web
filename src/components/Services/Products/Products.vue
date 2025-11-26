@@ -2,7 +2,7 @@
   <div class="products-container">
     <h2 class="products-title">Servicios Especializados</h2>
     
-    <div class="products-carousel">
+    <div class="products-carousel" data-vue="true">
       <button class="carousel-btn prev" @click="prevSlide">‹</button>
       
       <div class="carousel-track">
@@ -15,8 +15,8 @@
             opacity: index === currentIndex ? 1 : 0.3
           }"
         >
-          <div class="product-image">
-            <img :src="product.image" :alt="product.name" />
+          <div :class="['product-image', { icon: product.icon }]">
+            <img :src="product.icon || product.image" :alt="product.name + (product.icon ? ' icon' : '')" />
           </div>
           <div class="product-info">
             <h3>{{ product.name }}</h3>

@@ -1,26 +1,17 @@
 [
   {
     "id": 1,
-    "title": "Landign Page",
+    "title": "Landing Page",
     "description": "Aplicacion web para adquirir membresias de Norton a traves de sistemas de pago con Stripe, guardando datos de compra y procesamiento de pagos.",
-    "image": "/products/huvytas_Prod.png"
+    "image": "/products/huvytas_Prod.png",
+    "orientation": "normal"
   },
   {
     "id": 2,
-    "title": "Desarrollo Móvil",
-    "description": "Apps nativas e híbridas iOS/Android",
-    "image": "/services/mobile.png"
-  },
-  {
-    "id": 3,
-    "title": "Cloud Solutions",
-    "description": "Infraestructura en la nube AWS/Azure",
-    "image": "/services/cloud.png"
-  },
-  {
-    "id": 4,
-    "title": "Consultoría IT",
-    "description": "Asesoramiento tecnológico experto",
-    "image": "/services/consulting.png"
+    "title": "Tienda E-commerce",
+    "description": "Aplicacion web para adquirir prodcutos, mediante catalogo, ",
+    "image": "/products/product_mont.jpeg",
+    "orientation": "wide",
+    "minIconWidth": 420
   }
 ]
