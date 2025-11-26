@@ -84,3 +84,12 @@
   .nav-links-mobile { display: none !important; }
   .github-btn { display: inline-flex !important; }
 }
+
+@media (max-width: 768px) {
+  .nav-links-mobile.open ~ main .products-carousel .carousel-btn {
+    opacity: 0; 
+    pointer-events: none; 
+    transform: translateY(8px) scale(0.95);
+    transition: opacity 200ms ease, transform 200ms ease;
+  }
+}

@@ -11,13 +11,13 @@
     },
     {
         "nombre":"San Pedro Texis Emanuel Tristan",
-        "foto":"",
+        "foto":"/TeamMedia/EmanuelImage.png",
         "frase":"Construyendo el futuro digital.",
         "roles":["CEO", "FullStack Developer", "Especialist Infrastructure"],
         "portafolio":"",
         "linkedin":"",
-        "github":"",
-        "cv":"google.com"
+        "github":"https://github.com/AvellanaSkywalker",
+        "cv":"https://drive.google.com/drive/u/0/folders/1Z6DRBp9rYBQjD2Tn8MlcFXFoLHM-JWUy"
     },
     {
         "nombre":"González Delgado Arturo Iván",

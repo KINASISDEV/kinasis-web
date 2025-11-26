@@ -1,4 +1,3 @@
-// Moved from public/js/index-hydrate.js
 
 (function () {
   function safeNumber(n, fallback = 0) {
@@ -53,6 +52,10 @@
   function initSimpleCarousel() {
     const carousels = document.querySelectorAll('.products-carousel')
     carousels.forEach(carousel => {
+      if (carousel.dataset && carousel.dataset.vue) {
+        if (import.meta.env.MODE !== 'production') console.debug('index-hydrate: skipping Vue-managed products-carousel')
+        return
+      }
       const track = carousel.querySelector('.carousel-track') || carousel
       const items = carousel.querySelectorAll('.product-card')
       if (!items.length) return
@@ -84,8 +87,8 @@
         }
       }
 
-      if (prevBtn) prevBtn.addEventListener('click', () => goTo(index - 1))
-      if (nextBtn) nextBtn.addEventListener('click', () => goTo(index + 1))
+      if (prevBtn) prevBtn.addEventListener('click', () => { goTo(index - 1) })
+      if (nextBtn) nextBtn.addEventListener('click', () => { goTo(index + 1) })
       if (dots && dots.length) {
         dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)))
       }

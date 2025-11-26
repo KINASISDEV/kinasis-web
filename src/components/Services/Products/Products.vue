@@ -2,7 +2,7 @@
   <div class="products-container">
     <h2 class="products-title">Servicios Especializados</h2>
     
-    <div class="products-carousel">
+    <div class="products-carousel" data-vue="true">
       <button class="carousel-btn prev" @click="prevSlide">‹</button>
       
       <div class="carousel-track">

@@ -101,13 +101,15 @@
 
   @media (max-width: 768px) {
     .site-footer {
-      padding: 2rem 1.5rem 1rem;
+      padding: 2rem 0 1rem; /* remove horizontal padding so background spans edge-to-edge */
     }
 
     .footer-content {
       grid-template-columns: 1fr;
       gap: 1.5rem;
       text-align: center;
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
 
     .footer-section h3 {

@@ -8,13 +8,14 @@ import Foundators from '../components/Foundators/Foundators.vue'
 import Team from '../components/Team/Team.jsx'
 import Services from '../components/Services/Services.vue'
 import ReadyWork from '../components/ReadyWork/ReadyWork.vue'
+import Products from '../components/Services/Products/Products.vue'
 import ProcessDev from '../components/ProcessDev/ProcessDev.vue'
 import DevTools from '../components/DevTools/DevTools.vue'
 import Contact from '../components/Contact/Contact.vue'
 ---
 
 <Layout>
-  <Banner />
+  <Banner client:load />
   <main class="main-content pt-28 max-w-7xl mx-auto px-6">
     <div class="about-index-scope">
       <AboutUs />
@@ -23,7 +24,9 @@ import Contact from '../components/Contact/Contact.vue'
     <Goals />
     <Foundators />
     <Team />
-    <ReadyWork />
+    <ReadyWork>
+      <Products client:visible />
+    </ReadyWork>
     <Services />
     <ProcessDev />
     <DevTools />

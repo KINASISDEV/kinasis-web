@@ -249,6 +249,29 @@
   }
 
   .banner-overlay { display: none !important; }
+
+  .banner-inner h1 {
+    background: none !important;
+    -webkit-text-fill-color: unset !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    color: var(--brand-red) !important;
+    text-shadow: none !important;
+  }
+  .banner-inner h2 {
+    color: var(--brand-red) !important;
+    opacity: 0.95;
+  }
+
+  .scroll-arrow {
+    background: var(--brand-red) !important;
+    border-color: var(--brand-red) !important;
+    color: #fff !important;
+  }
+
+  .dark .banner-inner h1 { color: #45CCAC !important; }
+  .dark .banner-inner h2 { color: #45CCAC !important; }
+  .dark .scroll-arrow { background: #45CCAC !important; border-color: #45CCAC !important; color: #0d0f11 !important; }
 }
 
 
