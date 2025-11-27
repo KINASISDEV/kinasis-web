@@ -32,35 +32,42 @@ html, body {
 .brand-title { font-family: 'Roboto Mono', monospace; color: var(--brand-red); }
 
 .nav-links .nav-link {
-  position: relative;
-  color: var(--brand-red);
-  font-family: 'Jura', sans-serif;
-  font-weight: 600;
-  text-decoration: none;
-  transition: transform 0.12s ease;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6rem;
+	color: var(--brand-red);
+	font-family: 'Jura', sans-serif;
+	font-weight: 600;
+	text-decoration: none;
+	transition: transform 0.12s ease;
 }
 
-.nav-links .nav-link:hover {
+.nav-links .nav-link:hover,
+.nav-links-mobile .nav-link:hover {
   transform: translateY(-2px);
 }
 
-.nav-links .nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 2px;
-  background-color: var(--brand-red);
-  transition: width 0.4s ease; 
+.nav-links .nav-link::after,
+.nav-links-mobile .nav-link::after {
+	content: '';
+	display: inline-block;
+	width: 44px;
+	height: 2px;
+	margin-left: 0.6rem;
+	background-color: var(--brand-red);
+	transform-origin: left center;
+	transform: scaleX(0);
+	vertical-align: middle;
+	transition: transform 0.4s ease; 
 }
 
-.nav-links .nav-link:hover::after {
-  width: 100%;
+.nav-links .nav-link:hover::after,
+.nav-links-mobile .nav-link:hover::after {
+	transform: scaleX(1);
 }
 
-.dark .nav-links .nav-link::after {
+.dark .nav-links .nav-link::after,
+.dark .nav-links-mobile .nav-link::after {
   background-color: #45CCAC;
 }
 
@@ -68,10 +75,9 @@ html, body {
   background-color: #45CCAC;
 }
 
-.nav-links .nav-link.active::after {
-  width: 100%;
-  left: 50%;
-  transform: translateX(-50%);
+.nav-links .nav-link.active::after,
+.nav-links-mobile .nav-link.active::after {
+	transform: scaleX(1);
 }
 
 
@@ -106,12 +112,14 @@ html, body {
 	transition: color 0.3s ease;
 }
 
-.dark .nav-links .nav-link {
+.dark .nav-links .nav-link,
+.dark .nav-links-mobile .nav-link {
 	color: #45CCAC;
 	transition: color 0.3s ease;
 }
 
-.dark .nav-links .nav-link:hover {
+.dark .nav-links .nav-link:hover,
+.dark .nav-links-mobile .nav-link:hover {
 	color: #34D399;
 	transform: translateY(-1px);
 }
@@ -153,7 +161,7 @@ html, body {
 	border-bottom-color: rgba(215, 38, 56, 0.15);
 }
 
-brand-title,
+.brand-title,
 .nav-links .nav-link,
 .github-btn,
 .header {

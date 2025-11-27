@@ -267,6 +267,7 @@
     background: var(--brand-red) !important;
     border-color: var(--brand-red) !important;
     color: #fff !important;
+    bottom: calc(2rem + 10%);
   }
 
   .dark .banner-inner h1 { color: #45CCAC !important; }

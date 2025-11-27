@@ -1,5 +1,7 @@
 ---
 const currentPath = Astro.url.pathname;
+// Normalize path for consistent comparisons across environments (dev/prod, case differences, trailing slash)
+const _currentPath = currentPath.toLowerCase().replace(/\/$/, '');
 import "./HeaderLayout.css";
 ---
 <script>
@@ -66,12 +68,26 @@ import "./HeaderLayout.css";
 
       mobileNav.classList.add('hidden');
       menuToggle.setAttribute('aria-expanded', 'false');
+
+      const setMobileNavLinksTabIndex = (visible) => {
+        mobileNav.querySelectorAll('a, button, input, textarea, select, [tabindex]').forEach(el => {
+          if (visible) {
+            el.removeAttribute('tabindex');
+          } else {
+            el.setAttribute('tabindex', '-1');
+          }
+        });
+      };
+      // Ensure links inside a hidden nav are not focusable for accessibility
+      setMobileNavLinksTabIndex(false);
       menuToggle.addEventListener('click', () => {
         const isHidden = mobileNav.classList.contains('hidden');
         if (isHidden) {
           mobileNav.classList.remove('hidden');
           mobileNav.classList.add('open');
           mobileNav.setAttribute('aria-hidden', 'false');
+          // Make links focusable when nav opens
+          setMobileNavLinksTabIndex(true);
           menuToggle.setAttribute('aria-expanded', 'true');
           menuToggle.classList.add('open');
 
@@ -80,6 +96,8 @@ import "./HeaderLayout.css";
           mobileNav.classList.add('hidden');
           mobileNav.classList.remove('open');
           mobileNav.setAttribute('aria-hidden', 'true');
+          // Remove focusability when nav closes
+          setMobileNavLinksTabIndex(false);
           menuToggle.setAttribute('aria-expanded', 'false');
           menuToggle.classList.remove('open');
           document.body.style.overflow = '';
@@ -91,6 +109,7 @@ import "./HeaderLayout.css";
           mobileNav.classList.add('hidden');
           mobileNav.classList.remove('open');
           mobileNav.setAttribute('aria-hidden', 'true');
+          setMobileNavLinksTabIndex(false);
           menuToggle.setAttribute('aria-expanded', 'false');
           document.documentElement.style.overflow = '';
         });
@@ -104,6 +123,7 @@ import "./HeaderLayout.css";
               mobileNav.classList.add('hidden');
               mobileNav.classList.remove('open');
               mobileNav.setAttribute('aria-hidden', 'true');
+              setMobileNavLinksTabIndex(false);
               menuToggle.setAttribute('aria-expanded', 'false');
               document.documentElement.style.overflow = '';
             }
@@ -116,6 +136,7 @@ import "./HeaderLayout.css";
           mobileNav.classList.add('hidden');
           mobileNav.classList.remove('open');
           mobileNav.setAttribute('aria-hidden', 'true');
+          setMobileNavLinksTabIndex(false);
           menuToggle.setAttribute('aria-expanded', 'false');
           document.documentElement.style.overflow = '';
         }
@@ -146,11 +167,11 @@ import "./HeaderLayout.css";
         </svg>
       </button>
       <nav class="hidden md:flex space-x-6 nav-links mr-5">
-      <a href="/HomePage" class={`nav-link ${currentPath === '/HomePage' ? 'active' : ''}`}>Sobre nosotros</a>
-      <a href="/TeamWorkPage" class={`nav-link ${currentPath === '/TeamWorkPage' ? 'active' : ''}`}>Nuestro equipo</a>
-      <a href="/WorkPage" class={`nav-link ${currentPath === '/WorkPage' ? 'active' : ''}`}>Servicios</a>
-      <a href="/TecnologiesPage" class={`nav-link ${currentPath === '/TecnologiesPage' ? 'active' : ''}`}>Tecnologias</a>
-      <a href="/ContactPage" class={`nav-link ${currentPath === '/ContactPage' ? 'active' : ''}`}>Contacto</a>
+      <a href="/HomePage" class={`nav-link ${(_currentPath === '/homepage' || _currentPath === '/') ? 'active' : ''}`}>Sobre nosotros</a>
+      <a href="/TeamWorkPage" class={`nav-link ${_currentPath === '/teamworkpage' ? 'active' : ''}`}>Nuestro equipo</a>
+      <a href="/WorkPage" class={`nav-link ${_currentPath === '/workpage' ? 'active' : ''}`}>Servicios</a>
+      <a href="/TecnologiesPage" class={`nav-link ${_currentPath === '/tecnologiespage' ? 'active' : ''}`}>Tecnologias</a>
+      <a href="/ContactPage" class={`nav-link ${_currentPath === '/contactpage' ? 'active' : ''}`}>Contacto</a>
       </nav>
 
       <div class="flex items-center space-x-3">
@@ -177,10 +198,10 @@ import "./HeaderLayout.css";
 
 <nav id="mobileNav" role="menu" aria-hidden="true" class="nav-links-mobile md:hidden hidden">
   <div class="flex flex-col">
-    <a href="/HomePage" role="menuitem" class={`nav-link ${currentPath === '/HomePage' ? 'active' : ''}`}>Sobre nosotros</a>
-    <a href="/TeamWorkPage" role="menuitem" class={`nav-link ${currentPath === '/TeamWorkPage' ? 'active' : ''}`}>Nuestro equipo</a>
-    <a href="/WorkPage" role="menuitem" class={`nav-link ${currentPath === '/WorkPage' ? 'active' : ''}`}>Servicios</a>
-    <a href="/TecnologiesPage" role="menuitem" class={`nav-link ${currentPath === '/TecnologiesPage' ? 'active' : ''}`}>Tecnologias</a>
-    <a href="/ContactPage" role="menuitem" class={`nav-link ${currentPath === '/ContactPage' ? 'active' : ''}`}>Contacto</a>
+    <a href="/HomePage" role="menuitem" tabindex="-1" class={`nav-link ${(_currentPath === '/homepage' || _currentPath === '/') ? 'active' : ''}`}>Sobre nosotros</a>
+    <a href="/TeamWorkPage" role="menuitem" tabindex="-1" class={`nav-link ${_currentPath === '/teamworkpage' ? 'active' : ''}`}>Nuestro equipo</a>
+    <a href="/WorkPage" role="menuitem" tabindex="-1" class={`nav-link ${_currentPath === '/workpage' ? 'active' : ''}`}>Servicios</a>
+    <a href="/TecnologiesPage" role="menuitem" tabindex="-1" class={`nav-link ${_currentPath === '/tecnologiespage' ? 'active' : ''}`}>Tecnologias</a>
+    <a href="/ContactPage" role="menuitem" tabindex="-1" class={`nav-link ${_currentPath === '/contactpage' ? 'active' : ''}`}>Contacto</a>
   </div>
 </nav>
