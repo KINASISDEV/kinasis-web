@@ -80,7 +80,32 @@ html, body {
 	transform: scaleX(1);
 }
 
-
+@media (min-width: 769px) {
+	.nav-links .nav-link {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		padding: 0 6px 0 6px;
+		padding-bottom: 0.25rem;
+	}
+	.nav-links .nav-link::after {
+		position: absolute;
+		left: 50%;
+		bottom: -6px;
+		display: block;
+		width: calc(100% - 12px);
+		height: 4px;
+		background-color: var(--brand-red);
+		border-radius: 999px;
+		transform: translateX(calc(-50% - 8%)) scaleX(0);
+		transform-origin: center;
+		transition: transform 0.28s ease;
+	}
+	.nav-links .nav-link:hover::after,
+	.nav-links .nav-link.active::after {
+		transform: translateX(calc(-50% - 8%)) scaleX(1);
+	}
+}
 
 .github-btn { 
 	background: rgba(0,0,0,0.7); 

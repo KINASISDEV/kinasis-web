@@ -1,6 +1,5 @@
 ---
 const currentPath = Astro.url.pathname;
-// Normalize path for consistent comparisons across environments (dev/prod, case differences, trailing slash)
 const _currentPath = currentPath.toLowerCase().replace(/\/$/, '');
 import "./HeaderLayout.css";
 ---
@@ -69,16 +68,16 @@ import "./HeaderLayout.css";
       mobileNav.classList.add('hidden');
       menuToggle.setAttribute('aria-expanded', 'false');
 
-      const setMobileNavLinksTabIndex = (visible) => {
-        mobileNav.querySelectorAll('a, button, input, textarea, select, [tabindex]').forEach(el => {
+      function setMobileNavLinksTabIndex(visible: boolean) {
+        if (!mobileNav) return;
+          mobileNav.querySelectorAll('a, button, input, textarea, select, [tabindex]').forEach(el => {
           if (visible) {
             el.removeAttribute('tabindex');
           } else {
             el.setAttribute('tabindex', '-1');
           }
         });
-      };
-      // Ensure links inside a hidden nav are not focusable for accessibility
+      }
       setMobileNavLinksTabIndex(false);
       menuToggle.addEventListener('click', () => {
         const isHidden = mobileNav.classList.contains('hidden');
