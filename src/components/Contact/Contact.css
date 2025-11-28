@@ -264,9 +264,9 @@
 }
 
 .form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem 1rem;
 }
 
 .contact-form input,
@@ -281,6 +281,20 @@
     color: #000000;
     transition: box-shadow .25s ease, transform .25s ease, background .25s ease, border-color .25s ease;
     border: 1px solid rgba(215,38,56,0.12);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-form input.input-error,
+.contact-form textarea.input-error {
+  border-color: #dc3545;
+  box-shadow: 0 6px 18px rgba(220,53,69,0.12);
+}
+
+.field-error {
+  color: #dc3545;
+  font-size: 0.85rem;
+  margin: 0.35rem 0 0 0;
 }
 
 .contact-form input:focus,
