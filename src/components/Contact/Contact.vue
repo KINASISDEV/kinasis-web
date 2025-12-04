@@ -20,7 +20,7 @@
             <div class="info-icon">📞</div>
             <div>
               <h4>Teléfono</h4>
-              <p class="muted">+52 1 55 8795 7504</p>
+              <p class="muted">+52 5627308641</p>
             </div>
           </div>
 
@@ -43,8 +43,8 @@
                 required
                 placeholder="Nombre *"
                 aria-label="Nombre"
-                maxlength="35"
-                title="Máximo 30 caracteres"
+                maxlength="40"
+                title="Máximo 40 caracteres"
                 @input="sanitizeNameInput"
                 :class="{ 'input-error': errors.name }"
               />
@@ -59,8 +59,8 @@
                 placeholder="Email *"
                 aria-label="Email"
                 @input="validateEmailField"
-                maxlength="25"
-                title="Máximo 25 caracteres"
+                maxlength="30"
+                title="Máximo 30 caracteres"
                 :class="{ 'input-error': errors.email }"
               />
               <p class="field-error" v-if="errors.email">{{ errors.email }}</p>
@@ -82,7 +82,7 @@
             </div>
 
             <div>
-              <input v-model="form.company" placeholder="Empresa" aria-label="Empresa" maxlength="50" title="Máximo 50 caracteres" />
+              <input v-model="form.company" placeholder="Empresa" aria-label="Empresa" maxlength="60" title="Máximo 60 caracteres" />
             </div>
           </div>
 

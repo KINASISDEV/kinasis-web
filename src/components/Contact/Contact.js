@@ -39,22 +39,30 @@ export async function handleContactForm(formData) {
 	const message = (formData.message || '').trim()
 
 	const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ ]+$/
-	if (!name) return { success: false, message: 'Por favor ingresa tu nombre.', clearForm: false }
-	if (name.length < 2) return { success: false, message: 'El nombre es muy corto.', clearForm: false }
-	if (name.length > 35) return { success: false, message: 'El nombre no puede tener más de 35 caracteres.', clearForm: false }
-	if (!nameRegex.test(name)) return { success: false, message: 'El nombre contiene caracteres inválidos.', clearForm: false }
+	if (!name) 
+		return { success: false, message: 'Por favor ingresa tu nombre.', clearForm: false }
+	if (name.length < 2) 
+		return { success: false, message: 'El nombre es muy corto.', clearForm: false }
+	if (name.length > 40) 
+		return { success: false, message: 'El nombre no puede tener más de 40 caracteres.', clearForm: false }
+	if (!nameRegex.test(name)) 
+		return { success: false, message: 'El nombre contiene caracteres inválidos.', clearForm: false }
 
 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-	if (!email) return { success: false, message: 'Por favor ingresa tu email.', clearForm: false }
-	if (!emailRegex.test(email)) return { success: false, message: 'Por favor ingresa un email válido.', clearForm: false }
+	if (!email) 
+		return { success: false, message: 'Por favor ingresa tu email.', clearForm: false }
+	if (!emailRegex.test(email)) 
+		return { success: false, message: 'Por favor ingresa un email válido.', clearForm: false }
 
 	const phoneDigits = String(phoneRaw).replace(/\D/g, '')
 	if (phoneDigits) {
 		const phoneRegex = /^\d{7,15}$/
-		if (!phoneRegex.test(phoneDigits)) return { success: false, message: 'El teléfono solo debe contener números (7-15 dígitos).', clearForm: false }
+		if (!phoneRegex.test(phoneDigits)) 
+			return { success: false, message: 'El teléfono solo debe contener números (7-15 dígitos).', clearForm: false }
 	}
 
-	if (!message) return { success: false, message: 'Por favor escribe un mensaje.', clearForm: false }
+	if (!message) 
+		return { success: false, message: 'Por favor escribe un mensaje.', clearForm: false }
 
 	const payload = {
 		...formData,
@@ -65,12 +73,13 @@ export async function handleContactForm(formData) {
 	}
 
 	const result = await sendEmail(payload)
-	if (result.ok) return { success: true, message: 'Mensaje enviado correctamente. Te responderemos pronto 👍', clearForm: true }
+	if (result.ok) 
+		return { success: true, message: 'Mensaje enviado correctamente. Te responderemos pronto 👍', clearForm: true }
 	return { success: false, message: result.message || 'Error al enviar el mensaje', clearForm: false }
 }
 
 export function sanitizeName(name = '') {
-	return String(name).replace(/[^A-Za-zÀ-ÖØ-öø-ÿ ]+/g, '').slice(0, 35)
+	return String(name).replace(/[^A-Za-zÀ-ÖØ-öø-ÿ ]+/g, '').slice(0, 40)
 }
 
 export function sanitizePhone(phone = '') {
@@ -79,32 +88,41 @@ export function sanitizePhone(phone = '') {
 
 export function validateName(name = '') {
 	const v = String(name).trim()
-	if (!v) return 'Por favor ingresa tu nombre.'
-	if (v.length < 2) return 'El nombre es muy corto.'
-	if (v.length > 35) return 'El nombre no puede tener más de 35 caracteres.'
+	if (!v) 
+		return 'Por favor ingresa tu nombre.'
+	if (v.length < 2) 
+		return 'El nombre es muy corto.'
+	if (v.length > 40) 
+		return 'El nombre no puede tener más de 40 caracteres.'
 	const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ ]+$/
-	if (!nameRegex.test(v)) return 'El nombre contiene caracteres inválidos.'
+	if (!nameRegex.test(v)) 
+		return 'El nombre contiene caracteres inválidos.'
 	return ''
 }
 
 export function validateEmail(email = '') {
 	const v = String(email).trim()
-	if (!v) return 'Por favor ingresa tu email.'
+	if (!v) 
+		return 'Por favor ingresa tu email.'
 	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-	if (!emailRegex.test(v)) return 'Por favor ingresa un email válido.'
+	if (!emailRegex.test(v)) 
+		return 'Por favor ingresa un email válido.'
 	return ''
 }
 
 export function validatePhone(phone = '') {
 	const digits = String(phone || '').replace(/\D/g, '')
-	if (!digits) return ''
-	if (digits.length < 7 || digits.length > 15) return 'El teléfono solo debe contener números (7-15 dígitos).'
+	if (!digits) 
+		return ''
+	if (digits.length < 7 || digits.length > 15) 
+		return 'El teléfono solo debe contener números (7-15 dígitos).'
 	return ''
 }
 
 export function validateMessage(message = '') {
 	const v = String(message).trim()
-	if (!v) return 'Por favor escribe un mensaje.'
+	if (!v) 
+		return 'Por favor escribe un mensaje.'
 	return ''
 }
 

@@ -11,7 +11,8 @@ import ReadyWork from '../components/ReadyWork/ReadyWork.vue'
 import Products from '../components/Services/Products/Products.vue'
 import ProcessDev from '../components/ProcessDev/ProcessDev.vue'
 import DevTools from '../components/DevTools/DevTools.vue'
-import Contact from '../components/Contact/Contact.vue'
+import '../styles/index.css'
+
 ---
 
 <Layout>
@@ -30,7 +31,10 @@ import Contact from '../components/Contact/Contact.vue'
     <Services />
     <ProcessDev />
     <DevTools />
-    <Contact />
+
+    <div class="idea-cta">
+      <a href="/ContactPage" class="idea-btn" aria-label="Ir a contacto">¿TIENES UNA IDEA? Háblanos al respecto</a>
+    </div>
   </main>
 
   <script src="/src/js/index-hydrate.js" defer></script>
@@ -51,17 +55,4 @@ import Contact from '../components/Contact/Contact.vue'
 
 </Layout>
 
-<style>
-  @media (max-width: 1024px) {
-    .about-index-scope .about-section{
-      width: auto !important;
-      max-width: none !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-    }
-  }
 
-  @media (max-width: 1024px){
-    html, body { overflow-x: hidden !important; }
-  }
-</style>
