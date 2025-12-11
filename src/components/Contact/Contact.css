@@ -220,6 +220,12 @@
     font-size: 0.95rem;
 }
 
+.info-box p.muted.phone-number {
+  letter-spacing: 0.14em;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
 .dark .info-box p.muted {
     color: snow;
 }

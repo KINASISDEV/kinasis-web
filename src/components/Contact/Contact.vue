@@ -20,7 +20,7 @@
             <div class="info-icon">📞</div>
             <div>
               <h4>Teléfono</h4>
-              <p class="muted">+52 5627308641</p>
+              <p class="muted phone-number">+52 56 2730 8641</p>
             </div>
           </div>
 
