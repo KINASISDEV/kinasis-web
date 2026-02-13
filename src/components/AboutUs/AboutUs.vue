@@ -6,7 +6,7 @@
   <div class="about-container">
     <div class="left-align">
       <div class="about-section">
-        <h1 class="title-aboutUs">Sobre Nosotros</h1>
+        <h1 class="title-aboutUs">Sobre Nosotros UGU</h1>
         <p class="parrafo">En <span class="brand-word">KINASIS</span> creemos que el futuro se construye con soluciones inteligentes, éticas y centradas en las personas. Buscamos ser un referente en el sector tecnológico, aportando valor a través de proyectos sólidos.</p>
         <p class="parrafo">Nos especializamos en desarrollo web, aplicaciones de escritorio (para Windows y macOS), sistemas integrales, ecosistemas digitales personalizados y análisis y normalización de datos.</p>
       </div>
