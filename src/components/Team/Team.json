@@ -15,7 +15,7 @@
         "frase":"Construyendo el futuro digital.",
         "roles":["CEO", "FullStack Developer", "Especialist Infrastructure"],
         "portafolio":"",
-        "linkedin":"",
+        "linkedin":"https://www.linkedin.com/in/tristan-san-pedro-377b9b397",
         "github":"https://github.com/AvellanaSkywalker",
         "cv":"https://drive.google.com/drive/u/0/folders/1Z6DRBp9rYBQjD2Tn8MlcFXFoLHM-JWUy"
     },
@@ -24,13 +24,13 @@
         "foto":"/TeamMedia/IvanImage.png",
         "frase":"Diseños que inspiran soluciones.",
         "roles":["CTO","FullStack Developer", "Frontend Especialist"],
-        "portafolio":"https://effortless-cucurucho-4fb955.netlify.app/",
+        "portafolio":"https://portafolio-ivan-gonazlez.netlify.app/",
         "linkedin":"https://www.linkedin.com/in/arturo-iván-gonzález-delgado-76b739202",
         "github":"https://github.com/CachorroIvan",
         "cv":"https://drive.google.com/drive/folders/1b4YF_uXBc5SOUrkSak8boCLfrnxzZpQd"
     },
     {
-        "nombre":"González Ramirez Joshua",
+        "nombre":" Ramirez González Joshua",
         "foto":"/TeamMedia/JoshuaImage.png",
         "frase":"Creando experiencias digitales.",
         "roles":["CTO","FullStack Developer", "UI/UX Designer"],
