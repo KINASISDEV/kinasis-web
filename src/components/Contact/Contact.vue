@@ -82,7 +82,7 @@
             </div>
 
             <div>
-              <input v-model="form.company" placeholder="Empresa" aria-label="Empresa" maxlength="60" title="Máximo 60 caracteres" />
+              <input v-model="form.company" placeholder="Empresa" aria-label="Empresa" maxlength="50" title="Máximo 50 caracteres" />
             </div>
           </div>
 
