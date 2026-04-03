@@ -8,6 +8,9 @@ export default defineConfig({
   integrations: [
     tailwind(),
     react(),
-    vue()
+    vue(),
   ],
+  redirects: {
+    '/k': 'https://www.kinasisdev.shop',
+  }
 });
